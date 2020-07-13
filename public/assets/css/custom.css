@@ -1,0 +1,29 @@
+.card-top-blue{
+   border-top: 2px solid #6777ef;
+   border-radius: 10px!important;
+ }
+ .card-top-red{
+   border-top: 2px solid #fc544b;
+   border-radius: 10px!important;
+ }
+ .card-top-yellow{
+   border-top: 2px solid #ffa426;
+   border-radius: 10px!important;
+ }
+
+ .main-sidebar {
+   border-right:1px solid #5864BD!important;
+ }
+
+ .navbar-gradient {
+  background: #3604d6; 
+  background: -webkit-linear-gradient(to left, #e5e2f1, #fff); 
+  background: linear-gradient(to left, #e5e2f1,#fff); 
+  border-bottom:1px solid  #5864BD!important;
+  box-shadow: 0 10px 10px -5px rgba(84, 77, 141, 0.8);
+  margin-bottom:0;
+}
+
+body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu>li.active>a {
+  color: #0e1d85!important;
+}
