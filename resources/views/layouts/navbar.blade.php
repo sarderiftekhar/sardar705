@@ -23,7 +23,7 @@
     </ul>
   </div>
   <ul class="navbar-nav navbar-right">
-    <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown"
+    {{-- <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown"
         class="nav-link nav-link-lg message-toggle"><i data-feather="mail"></i>
         <span class="badge headerBadge1">
           6 </span> </a>
@@ -83,7 +83,7 @@
           <a href="#">View All <i class="fas fa-chevron-right"></i></a>
         </div>
       </div>
-    </li>
+    </li> --}}
     <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown"
         class="nav-link notification-toggle nav-link-lg"><i data-feather="bell" class="bell"></i>
       </a>
