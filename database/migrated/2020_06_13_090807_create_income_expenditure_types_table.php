@@ -14,7 +14,7 @@ class CreateIncomeExpenditureTypesTable extends Migration
     public function up()
     {
         Schema::create('income_expenditure_types', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->id();
             $table->string('name');
             $table->string('type');
             $table->timestamps();

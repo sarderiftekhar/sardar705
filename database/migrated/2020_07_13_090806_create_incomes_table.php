@@ -14,7 +14,7 @@ class CreateIncomesTable extends Migration
     public function up()
     {
         Schema::create('incomes', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->id();
             $table->foreignId('type_id')->constrained('income_expenditure_types');
             $table->decimal('amount',10,2);
             $table->decimal('tax_amount',10,2)->nullable();
