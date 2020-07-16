@@ -122,6 +122,12 @@
                </section>
             </form>
       </div>
+
+   @if(Session::has('message'))
+         <script>
+               swal("Client saved successfully!");
+         </script>
+   @endif
 @stop
 
  

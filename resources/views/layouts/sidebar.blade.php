@@ -27,7 +27,13 @@
                <a href="#" class="menu-toggle nav-link has-dropdown"><i
                    data-feather="user" style="color:rgb(11, 8, 195);"></i><span>Clients</span></a>
                <ul class="dropdown-menu active">
-                 <li><a class="nav-link" href="/new-client"><i data-feather="user-plus" style="color:rgb(11, 8, 195);"></i>New Client</a></li>
+
+                <li>
+                  <a class="nav-link" href="/new-client">
+                    <i data-feather="user-plus" style="color:rgb(11, 8, 195);">
+                    </i>New Client</a>
+                </li>
+
                  <li><a class="nav-link" href="#"><i data-feather="settings" style="color:rgb(11, 8, 195);"></i>Modify Client</a></li>
                  <li><a class="nav-link" href="#"><i data-feather="user-minus" style="color:rgb(11, 8, 195);"></i>View Clients</a></li>
                </ul>

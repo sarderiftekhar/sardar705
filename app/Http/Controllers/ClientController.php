@@ -37,7 +37,7 @@ class ClientController extends Controller
     public function store(Request $request)
     {
         // return $request->all();
-        // $request->session()->flash('success', 'Client saved successfully.');
+        $request->session()->flash('success', 'Client saved successfully.');
         $notification = array(
             'message' => 'info found data!',
             'alert-type' => 'info'
