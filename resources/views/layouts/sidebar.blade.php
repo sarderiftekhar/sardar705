@@ -3,50 +3,68 @@
          <aside id="sidebar-wrapper">
            <div class="sidebar-brand">
              <a href="#" style="margin-bottom:3em;"> 
-               <img alt="image" src="assets/img/logo.png" class="header-logo" style=" width: 49%;height: 161%;"/> 
-                 <span class="logo-name"><p style="margin-top:-1em;color:darkblue;">Sardar</p><p class="align-center" style="font-size:0.4em;margin-top:-3em;margin-bottom:3em;">subtitle goes here</p></span>
+               {{-- <img alt="image" src="assets/img/logo.png" class="header-logo" style=" width: 49%;height: 161%;"/>  --}}
+               <img alt="image" src="assets/img/logo.png" class="header-logo"/> 
+                 <span class="logo-name"><p style="margin-top:-1em;color:darkblue;">Sardar</p><p class="align-center" style="font-size:0.4em;margin-top:-3em;margin-bottom:3em;">Real estate management</p></span>
              </a>
              
            </div>
            <ul class="sidebar-menu" style="margin-top:1.5em;">
              {{-- <li class="menu-header">Main</li> --}}
-             <li class="dropdown active">
-               <a href="index.html" class="nav-link"><i data-feather="home" color="#0e1d85"></i><span>Dashboard</span></a>
+             <li class="dropdown">
+               <a href="/dashboard" class="nav-link"><i data-feather="home" color="#0e1d85"></i><span>Dashboard</span></a>
              </li>
              <li class="dropdown">
                <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                   data-feather="file" color="#0e1d85"></i><span>Applications</span></a>
+                   data-feather="file" color="#0e1d85"></i><span>Appointments</span></a>
                <ul class="dropdown-menu">
-                 <li><a class="nav-link" href="#"><i data-feather="file-plus"></i>Record application</a></li>
-                 <li><a class="nav-link" href="#"><i data-feather="file-text"></i>Modify Application</a></li>
-                 <li><a class="nav-link" href="#"><i data-feather="file-minus"></i>Deactivate application</a></li>
+                 <li><a class="nav-link" href=""><i data-feather="file-plus"></i>New Appointment</a></li>
+                 <li><a class="nav-link" href="#"><i data-feather="file-text"></i>Modify Appointment</a></li>
+                 <li><a class="nav-link" href="#"><i data-feather="file-minus"></i>View Appointments</a></li>
                </ul>
              </li>
              <li class="dropdown">
                <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                   data-feather="user" color="#0e1d85"></i><span>Users</span></a>
-               <ul class="dropdown-menu">
-                 <li><a class="nav-link" href="#"><i data-feather="user-plus"></i>Create user</a></li>
-                 <li><a class="nav-link" href="#"><i data-feather="user-check"></i>Modify user</a></li>
-                 <li><a class="nav-link" href="#"><i data-feather="user-minus"></i>Deactivate user</a></li>
+                   data-feather="user" style="color:rgb(11, 8, 195);"></i><span>Clients</span></a>
+               <ul class="dropdown-menu active">
+                 <li><a class="nav-link" href="/new-client"><i data-feather="user-plus" style="color:rgb(11, 8, 195);"></i>New Client</a></li>
+                 <li><a class="nav-link" href="#"><i data-feather="settings" style="color:rgb(11, 8, 195);"></i>Modify Client</a></li>
+                 <li><a class="nav-link" href="#"><i data-feather="user-minus" style="color:rgb(11, 8, 195);"></i>View Clients</a></li>
                </ul>
              </li>
              <li class="dropdown">
-               <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="command" color="#0e1d85"></i><span>Products</span></a>
+               <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="users" style="color:rgb(179, 115, 37);"></i><span>Agents</span></a>
                <ul class="dropdown-menu">
-                 <li><a class="nav-link" href="#"> <i data-feather="arrow-right-circle" ></i>New product</a></li>
-                 <li><a class="nav-link" href="#"> <i data-feather="arrow-right-circle"></i> Modify product</a></li>
-                 <li><a class="nav-link" href="#"><i data-feather="arrow-right-circle"></i> Product valuations</a></li>
+                 <li><a class="nav-link" href="#"> <i data-feather="user-plus"  style="color:darkorange;"></i>New Agent</a></li>
+                 <li><a class="nav-link" href="#"> <i data-feather="settings" style="color:darkorange;"></i> Modify Agent</a></li>
+                 <li><a class="nav-link" href="#"><i data-feather="user-minus" style="color:darkorange;"></i> View Agents</a></li>
                </ul>
              </li>
              <li class="dropdown">
-               <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="mail" color="#0e1d85"></i><span>Send letters</span></a>
+               <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="home" style="color:rgb(21, 105, 28);"></i><span>Properties</span></a>
                <ul class="dropdown-menu">
-                 <li><a class="nav-link" href="#"> <i data-feather="send"></i>Acknowledgements</a></li>
-                 <li><a class="nav-link" href="#"> <i data-feather="send"></i>Notifications</a></li>
-                 <li><a class="nav-link" href="#"><i data-feather="send"></i>Strike letters</a></li>
+                 <li><a class="nav-link" href="#"> <i data-feather="send" style="color:rgb(21, 105, 28);"></i>New Properties</a></li>
+                 <li><a class="nav-link" href="#"> <i data-feather="settings" style="color:rgb(21, 105, 28);"></i>Modify Properties</a></li>
+                 <li><a class="nav-link" href="#"><i data-feather="info" style="color:rgb(21, 105, 28);"></i>View Properties</a></li>
+                 <li><a class="nav-link" href="#"><i data-feather="layout" style="color:rgb(21, 105, 28);"></i>Property Reports</a></li>
                </ul>
              </li>
+             <li class="dropdown">
+              <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="archive" style="color:rgb(21, 105, 28);"></i><span>Documents</span></a>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link" href="#"> <i data-feather="folder-plus" style="color:rgb(21, 105, 28);"></i>Upload new</a></li>
+                <li><a class="nav-link" href="#"> <i data-feather="file-text" style="color:rgb(21, 105, 28);"></i>Track Documents</a></li>
+                <li><a class="nav-link" href="#"><i data-feather="list" style="color:rgb(21, 105, 28);"></i>List of Documents</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="dollar-sign" style="color:rgb(20, 20, 18);"></i><span>Income Expenditure</span></a>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link" href="#"> <i data-feather="credit-card" style="color:rgb(20, 20, 18);"></i>New Expense</a></li>
+                <li><a class="nav-link" href="#"> <i data-feather="square" style="color:rgb(20, 20, 18);"></i>Payment received</a></li>
+                <li><a class="nav-link" href="#"><i data-feather="list" style="color:rgb(20, 20, 18);"></i>View Reports</a></li>
+              </ul>
+            </li>
              <li class="dropdown">
                <a href="#" class="nav-link"><i data-feather="settings" color="#0e1d85"></i><span>User settings</span></a>
              </li>

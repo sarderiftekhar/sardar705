@@ -20,3 +20,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
+Route::get('/blank', 'HomeController@blank')->name('blank');
+
+// Client routes
+Route::get('/new-client', 'ClientController@create')->name('newClient');
+Route::post('/store-client', 'ClientController@store')->name('saveClient');
+
+
