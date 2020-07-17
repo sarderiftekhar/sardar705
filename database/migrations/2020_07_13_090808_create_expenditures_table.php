@@ -19,6 +19,9 @@ class CreateExpendituresTable extends Migration
             $table->mediumText('notes');
             $table->date('date');
             $table->decimal('amount',10,2);
+            $table->foreignId('client_id')->constrained('clients');
+            $table->foreignId('agent_id')->constrained('agents');
+            $table->foreignId('property_id')->constrained('properties');
             $table->timestamps();
         });
     }

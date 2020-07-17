@@ -2,7 +2,7 @@
 @section('content')
       <!-- Main Content -->
       <div class="main-content">
-            <form class="form" method="POST" action="{{route('saveClient')}}">
+            <form class="form" method="POST" action="{{route('clients.store')}}">
                @csrf
                <section class="section">
                   <div class="row" style="margin:auto;">

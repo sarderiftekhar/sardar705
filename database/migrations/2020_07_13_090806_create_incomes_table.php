@@ -18,6 +18,9 @@ class CreateIncomesTable extends Migration
             $table->foreignId('type_id')->constrained('income_expenditure_types');
             $table->decimal('amount',10,2);
             $table->decimal('tax_amount',10,2)->nullable();
+            $table->foreignId('client_id')->constrained('clients');
+            $table->foreignId('agent_id')->constrained('agents');
+            $table->foreignId('property_id')->constrained('properties');
             $table->date('date');
             $table->timestamps();
         });

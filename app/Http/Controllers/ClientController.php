@@ -37,12 +37,9 @@ class ClientController extends Controller
     public function store(Request $request)
     {
         // return $request->all();
+        Client::create($request->all());
         $request->session()->flash('success', 'Client saved successfully.');
-        $notification = array(
-            'message' => 'info found data!',
-            'alert-type' => 'info'
-        );
-        return back()->with($notification);
+        return back();
     }
 
     /**

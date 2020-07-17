@@ -134,11 +134,11 @@
       </div>
     </li>
     <li class="dropdown"><a href="#" data-toggle="dropdown"
-        class="nav-link dropdown-toggle nav-link-lg nav-link-user"> <img alt="image" src="assets/img/user.png"
+        class="nav-link dropdown-toggle nav-link-lg nav-link-user"> <img alt="image" src="{{asset('assets/img/user.png')}}"
           class=""> <span class="d-sm-none d-lg-inline-block"></span></a>
       <div class="dropdown-menu dropdown-menu-right pullDown">
-        <div class="dropdown-title">Hello Sadar</div>
-        <a href="profile.html" class="dropdown-item has-icon"> <i class="far
+        <div class="dropdown-title">Hello Sardar</div>
+        <a href="#" class="dropdown-item has-icon"> <i class="far
                         fa-user"></i> Profile
         </a> <a href="timeline.html" class="dropdown-item has-icon"> <i class="fas fa-bolt"></i>
           Activities
@@ -146,8 +146,8 @@
           Settings
         </a>
         <div class="dropdown-divider"></div>
-        <a href="auth-login.html" class="dropdown-item has-icon text-danger" href="{{ route('logout') }}" onclick="event.preventDefault();                            document.getElementById('logout-form').submit();">
-           {{ __('Logout') }} "><i class="fas fa-sign-out-alt"></i>
+        <a href="#" class="dropdown-item has-icon text-danger" href="{{ route('logout') }}" onclick="event.preventDefault();                            document.getElementById('logout-form').submit();">
+           {{ __('Logout') }} <i class="fas fa-sign-out-alt"></i>
          </a>
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
           @csrf

@@ -19,11 +19,29 @@ Route::get('/', function () {
 
 Auth::routes();
 
+// Admin dashbaord
 Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
+
+// Blank page
 Route::get('/blank', 'HomeController@blank')->name('blank');
 
+// Appointments
+
 // Client routes
-Route::get('/new-client', 'ClientController@create')->name('newClient');
-Route::post('/store-client', 'ClientController@store')->name('saveClient');
+Route::resource('clients','ClientController');
+
+// Agents
+
+// Properties
+
+// Documents
+
+// Income Expenditures
+
+// User Settings
+
+// 
+
+
 
 

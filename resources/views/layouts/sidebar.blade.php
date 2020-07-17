@@ -4,8 +4,9 @@
            <div class="sidebar-brand">
              <a href="#" style="margin-bottom:3em;"> 
                {{-- <img alt="image" src="assets/img/logo.png" class="header-logo" style=" width: 49%;height: 161%;"/>  --}}
-               <img alt="image" src="assets/img/logo.png" class="header-logo"/> 
-                 <span class="logo-name"><p style="margin-top:-1em;color:darkblue;">Sardar</p><p class="align-center" style="font-size:0.4em;margin-top:-3em;margin-bottom:3em;">Real estate management</p></span>
+               <img alt="image" src="{{asset('assets/img/logo.png')}}" class="header-logo"/> 
+                 <span class="logo-name"><p style="margin-top:-1em;color:darkblue;">Sardar</p>
+                  <p class="align-center" style="font-size:0.4em;margin-top:-3em;margin-bottom:3em;">Real estate management</p></span>
              </a>
              
            </div>
@@ -29,7 +30,7 @@
                <ul class="dropdown-menu active">
 
                 <li>
-                  <a class="nav-link" href="/new-client">
+                  <a class="nav-link" href="clients/create">
                     <i data-feather="user-plus" style="color:rgb(11, 8, 195);">
                     </i>New Client</a>
                 </li>
