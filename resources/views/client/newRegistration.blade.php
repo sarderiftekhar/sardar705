@@ -12,7 +12,7 @@
                         </div>
                         <div class="card-body">
                         <div class="form-row">
-                              <div class="form-group col-md-4">
+                              <div class="form-group col-md-6">
                               <label for="title">Title</label>
                               <select id="title" class="form-control" name="title">
                                  <option selected>Choose...</option>
@@ -21,51 +21,37 @@
                                  <option value="ms">Ms</option>
                               </select>
                               </div>
+                              <div class="form-group col-md-6">
+                                 <label for="first_name">First Name</label>
+                                 <input type="text" class="form-control" id="first_name" placeholder="First Name" name="first_name">
+                              </div>
                            </div>
                            <div class="form-row">
                            <div class="form-group col-md-6">
-                              <label for="first_name">First Name</label>
-                              <input type="text" class="form-control" id="first_name" placeholder="First_name" name="first_name">
+                              <label for="first_name">Middle Name</label>
+                              <input type="text" class="form-control" id="middle_name" placeholder="Middle Name" name="middle_name">
                            </div>
                            <div class="form-group col-md-6">
                               <label for="last_name">Last Name</label>
                               <input type="text" class="form-control" id="last_name" placeholder="Last name" name="last_name">
                            </div>
                         </div>
-                        <div class="form-group">
-                           <label for="address_line_1">Address Line1</label>
-                           <input type="text" class="form-control" id="address_line_1" placeholder="1234 Main St" name="address_line_1">
-                        </div>
-                        <div class="form-group">
-                           <label for="address_line_2">Address Line 2</label>
-                           <input type="text" class="form-control" id="address_line_2"
-                              placeholder="Apartment, studio, or floor" name="address_line_2">
+                        <div class="form-row">
+                           <div class="form-group col-md-6">
+                              <label for="address_line_1">Address Line1</label>
+                              <input type="text" class="form-control" id="address_line_1" placeholder="1234 Main St" name="address_line_1">
+                           </div>
+                           <div class="form-group col-md-6">
+                              <label for="address_line_2">Address Line 2</label>
+                              <input type="text" class="form-control" id="address_line_2"
+                                 placeholder="Apartment, studio, or floor" name="address_line_2">
+                           </div>
                         </div>
                         <div class="form-row">
-                              <div class="form-group col-md-6">
-                                       <label for="phone_number">Phone Number</label><br>
-                                       <div class="input-group">
-                                          <div class="input-group-prepend">
-                                          <div class="input-group-text">
-                                             <i class="fas fa-phone"></i>
-                                          </div>
-                                          </div>
-                                          <input type="number" class="form-control phone-number" name="phone_number">
-                                       </div>
-                                 </div>
-                              <div class="form-group col-md-6">
-                                       <label for="email">Email</label><br>
-                                       <div class="input-group">
-                                          <div class="input-group-prepend">
-                                          <div class="input-group-text">
-                                             <i class="fas fa-envelope"></i>
-                                          </div>
-                                          </div>
-                                          <input type="email" class="form-control email" name="email">
-                                       </div>
-                              </div>
-                        </div>
-                        <div class="form-row">
+                           <div class="form-group col-md-6">
+                              <label for="address_line_3">Address Line 3</label>
+                              <input type="text" class="form-control" id="address_line_1" placeholder="Street name" name="address_line_3">
+                           </div>
                            <div class="form-group col-md-6">
                               <label for="city">City</label>
                               <select id="city" class="form-control" name="city">
@@ -86,7 +72,9 @@
                                  <option value="Whitehorse">Whitehorse</option>
                               </select>
                            </div>
-                           <div class="form-group col-md-4">
+                        </div>
+                        <div class="form-row">
+                           <div class="form-group col-md-6">
                               <label for="inputState">State</label>
                               <select id="inputState" class="form-control">
                               <option selected>Choose...</option>
@@ -100,9 +88,88 @@
                               <option value="Nunavut">Nunavut</option>
                               </select>
                            </div>
-                           <div class="form-group col-md-2">
+                           <div class="form-group col-md-6">
                               <label for="inputZip">Zip</label>
                               <input type="text" class="form-control" id="inputZip" name="zip">
+                           </div>
+                        </div>
+                        <div class="form-row">
+                           <div class="form-group col-md-6">
+                              <label>Date of birth</label>
+                              <input type="date" class="form-control datepicker" name="date_of_birth">
+                            </div>
+                            <div class="form-group col-md-6">
+                              <label>Marriage Day </label>
+                              <input type="date" class="form-control datepicker" name="marriage_day">
+                            </div>
+
+                        </div>
+                   
+                        <div class="form-row">
+                              <div class="form-group col-md-6">
+                                       <label for="phone_number">Phone Number</label><br>
+                                       <div class="input-group">
+                                          <div class="input-group-prepend">
+                                             <div class="input-group-text">
+                                                <i class="fas fa-phone"></i>
+                                             </div>
+                                          </div>
+                                          <input type="number" class="form-control phone-number" name="phone_number">
+                                       </div>
+                                 </div>
+                                 <div class="form-group col-md-6">
+                                    <label for="phone_number">Cell Number</label><br>
+                                    <div class="input-group">
+                                       <div class="input-group-prepend">
+                                       <div class="input-group-text">
+                                          <i class="fas fa-phone"></i>
+                                       </div>
+                                       </div>
+                                       <input type="number" class="form-control phone-number" name="cell_number">
+                                    </div>
+                              </div>
+                        </div>
+                        <div class="form-row">
+                              <div class="form-group col-md-6">
+                                    <label for="email">Email</label><br>
+                                    <div class="input-group">
+                                       <div class="input-group-prepend">
+                                       <div class="input-group-text">
+                                          <i class="fas fa-envelope"></i>
+                                       </div>
+                                       </div>
+                                       <input type="email" class="form-control email" name="email">
+                                    </div>
+                              </div>
+                              
+                              <div class="form-group col-md-6">
+                                 <label for="client_photograph">Client Photograph</label><br>
+                                 <div class="input-group" style="border:1px solid rgb(230, 232, 235);padding:0.5em;">
+                                    <input type="file" name="photograph" id="photograph" name="photograph">
+                                 </div>
+                              </div>
+                        </div>
+                        <div class="form-row">
+                           <div class="form-group col-md-6">
+                              <label for="inputZip">Client Type</label>
+                              <select id="city" class="form-control" name="agent_id">
+                                 <option value="seller" selected>Seller</option>
+                                 <option value="buyer">Buyer</option>
+                              </select>
+                           </div>
+                           <div class="form-group col-md-6">
+                              <label for="city">Agent reference</label>
+                              <select id="city" class="form-control" name="agent_id">
+                                 <option selected>Choose...</option>
+                                 <option value="Whitehorse">Agent Name </option>
+                              </select>
+                           </div>
+                        </div>
+
+                        <div class="form-row">
+                           <label>Notes for the client</label>
+                           <div class="form-group col-md-12">
+                           <textarea name="note" id="" cols="60" rows="10" style="width:100%;"></textarea>
                            </div>
                         </div>
                         {{-- <div class="form-group mb-0">
