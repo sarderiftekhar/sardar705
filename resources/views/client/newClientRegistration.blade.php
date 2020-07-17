@@ -2,7 +2,7 @@
 @section('content')
       <!-- Main Content -->
       <div class="main-content">
-            <form class="form" method="POST" action="{{route('clients.store')}}">
+            <form class="form" method="POST" action="{{route('clients.store')}}" enctype="multipart/form-data">
                @csrf
                <section class="section">
                   <div class="row" style="margin:auto;">
@@ -20,10 +20,14 @@
                                  <option value="mrs">Mrs</option>
                                  <option value="ms">Ms</option>
                               </select>
+                              
                               </div>
                               <div class="form-group col-md-6">
                                  <label for="first_name">First Name</label>
                                  <input type="text" class="form-control" id="first_name" placeholder="First Name" name="first_name">
+                                 @if($errors->has('first_name'))
+                                    <p class="help text-danger">{{$errors->first('first_name')}}</p>
+                                 @endif
                               </div>
                            </div>
                            <div class="form-row">
@@ -34,12 +38,18 @@
                            <div class="form-group col-md-6">
                               <label for="last_name">Last Name</label>
                               <input type="text" class="form-control" id="last_name" placeholder="Last name" name="last_name">
+                              @if($errors->has('last_name'))
+                                    <p class="help text-danger">{{$errors->first('last_name')}}</p>
+                              @endif
                            </div>
                         </div>
                         <div class="form-row">
                            <div class="form-group col-md-6">
                               <label for="address_line_1">Address Line1</label>
                               <input type="text" class="form-control" id="address_line_1" placeholder="1234 Main St" name="address_line_1">
+                              @if($errors->has('address_line_1'))
+                              <p class="help text-danger">{{$errors->first('address_line_1')}}</p>
+                        @endif
                            </div>
                            <div class="form-group col-md-6">
                               <label for="address_line_2">Address Line 2</label>
@@ -90,7 +100,10 @@
                            </div>
                            <div class="form-group col-md-6">
                               <label for="inputZip">Zip</label>
-                              <input type="text" class="form-control" id="inputZip" name="zip">
+                              <input type="text" class="form-control" id="inputZip" name="zip_code">
+                              @if($errors->has('zip_code'))
+                                    <p class="help text-danger">{{$errors->first('zip_code')}}</p>
+                              @endif
                            </div>
                         </div>
                         <div class="form-row">
@@ -102,9 +115,7 @@
                               <label>Marriage Day </label>
                               <input type="date" class="form-control datepicker" name="marriage_day">
                             </div>
-
                         </div>
-                   
                         <div class="form-row">
                               <div class="form-group col-md-6">
                                        <label for="phone_number">Phone Number</label><br>
@@ -125,8 +136,11 @@
                                           <i class="fas fa-phone"></i>
                                        </div>
                                        </div>
-                                       <input type="number" class="form-control phone-number" name="cell_number">
+                                       <input type="number" class="form-control phone-number" name="mobile_number">
                                     </div>
+                                    @if($errors->has('mobile_number'))
+                                       <p class="help text-danger">{{$errors->first('mobile_number')}}</p>
+                                    @endif
                               </div>
                         </div>
                         <div class="form-row">
@@ -140,12 +154,15 @@
                                        </div>
                                        <input type="email" class="form-control email" name="email">
                                     </div>
+                                    @if($errors->has('email'))
+                                       <p class="help text-danger">{{$errors->first('email')}}</p>
+                                    @endif
                               </div>
                               
                               <div class="form-group col-md-6">
                                  <label for="client_photograph">Client Photograph</label><br>
                                  <div class="input-group" style="border:1px solid rgb(230, 232, 235);padding:0.5em;">
-                                    <input type="file" name="photograph" id="photograph" name="photograph">
+                                    <input type="file" name="client_photograph" id="photograph" name="photograph">
                                  </div>
                               </div>
                         </div>
@@ -161,7 +178,9 @@
                               <label for="city">Agent reference</label>
                               <select id="city" class="form-control" name="agent_id">
                                  <option selected>Choose...</option>
-                                 <option value="Whitehorse">Agent Name </option>
+                                 @foreach ($agents as $agent)
+                                    <option value="$agent_id">{{$agent->first_name}} {{$agent->last_name}}</option>
+                                 @endforeach
                               </select>
                            </div>
                         </div>
@@ -169,7 +188,7 @@
                         <div class="form-row">
                            <label>Notes for the client</label>
                            <div class="form-group col-md-12">
-                           <textarea name="note" id="" cols="60" rows="10" style="width:100%;"></textarea>
+                           <textarea name="notes" id="" cols="60" rows="10" style="width:100%;"></textarea>
                            </div>
                         </div>
                         {{-- <div class="form-group mb-0">

@@ -20,10 +20,11 @@ class CreateCompaniesTable extends Migration
             $table->string('address_line_2')->nullable();
             $table->string('address_line_3')->nullable();
             $table->string('state')->nullable();
+            $table->string('city')->nullable();
             $table->string('zip')->nullable();
-            $table->integer('country')->nullable();
-            $table->integer('phone')->nullable();
-            $table->integer('fax')->nullable();
+            $table->string('country')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('fax')->nullable();
             $table->string('email')->nullable();
             $table->string('website')->nullable();
             $table->mediumText('notes');

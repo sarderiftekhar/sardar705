@@ -15,7 +15,9 @@ class CreateClientsTable extends Migration
     {
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
             $table->string('first_name')->nullable();
+            $table->string('middle_name')->nullable();
             $table->string('last_name')->nullable();
             $table->string('address_line_1')->nullable();
             $table->string('address_line_2')->nullable();
@@ -23,13 +25,16 @@ class CreateClientsTable extends Migration
             $table->string('zip_code')->nullable();
             $table->string('state')->nullable();
             $table->string('city')->nullable();
-            $table->string('village')->nullable();
-            $table->string('country')->nullable();
             $table->string('email')->nullable();
-            $table->integer('phone')->nullable();
-            $table->integer('mobile')->nullable();
-            $table->boolean('status')->defualt(true);
+            $table->string('phone_number')->nullable();
+            $table->string('mobile_number')->nullable();
+            $table->date('date_of_birth')->nullable();
+            $table->date('marriage_day')->nullable();
+            $table->string('client_type')->nullable();
+            $table->string('client_photograph')->nullable();
+            $table->foreignId('agent_id')->constrained('agents');
             $table->mediumText('notes')->nullable();
+            $table->tinyInteger('status')->default('1');
             $table->timestamps();
         });
     }
