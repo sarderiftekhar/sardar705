@@ -12,7 +12,7 @@
            </div>
            <ul class="sidebar-menu" style="margin-top:1.5em;">
              {{-- <li class="menu-header">Main</li> --}}
-             <li class="dropdown">
+           <li class="dropdown {{ Route::is('dashboard') ? 'active' : '' }}">
                <a href="/dashboard" class="nav-link"><i data-feather="home" color="#0e1d85"></i><span>Dashboard</span></a>
              </li>
              <li class="dropdown">
@@ -24,7 +24,7 @@
                  <li><a class="nav-link" href="#"><i data-feather="file-minus"></i>View Appointments</a></li>
                </ul>
              </li>
-             <li class="dropdown">
+            <li class="dropdown {{ Request::is('clients*') ? 'active' : '' }}">
                <a href="#" class="menu-toggle nav-link has-dropdown"><i
                    data-feather="user" style="color:rgb(11, 8, 195);"></i><span>Clients</span></a>
                <ul class="dropdown-menu active">
