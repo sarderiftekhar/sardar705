@@ -27,3 +27,6 @@
 body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu>li.active>a {
   color: #0e1d85!important;
 }
+li active{
+  background-color: #3604d6!important;
+}

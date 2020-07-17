@@ -21,22 +21,21 @@
                <ul class="dropdown-menu">
                  <li><a class="nav-link" href=""><i data-feather="file-plus"></i>New Appointment</a></li>
                  <li><a class="nav-link" href="#"><i data-feather="file-text"></i>Modify Appointment</a></li>
-                 <li><a class="nav-link" href="#"><i data-feather="file-minus"></i>View Appointments</a></li>
+                 <li><a class="nav-link" href="#"><i data-feather="list"></i>List Appointments</a></li>
                </ul>
              </li>
             <li class="dropdown {{ Request::is('clients*') ? 'active' : '' }}">
                <a href="#" class="menu-toggle nav-link has-dropdown"><i
                    data-feather="user" style="color:rgb(11, 8, 195);"></i><span>Clients</span></a>
                <ul class="dropdown-menu active">
-
                 <li>
-                  <a class="nav-link" href="clients/create">
+                  <a class="nav-link" href="{{route('clients.create')}}">
                     <i data-feather="user-plus" style="color:rgb(11, 8, 195);">
                     </i>New Client</a>
                 </li>
 
                  <li><a class="nav-link" href="#"><i data-feather="settings" style="color:rgb(11, 8, 195);"></i>Modify Client</a></li>
-                 <li><a class="nav-link" href="#"><i data-feather="user-minus" style="color:rgb(11, 8, 195);"></i>View Clients</a></li>
+                 <li><a class="nav-link" href="{{route('clients.index')}}"><i data-feather="list" style="color:rgb(11, 8, 195);"></i>List Clients</a></li>
                </ul>
              </li>
              <li class="dropdown">
@@ -44,9 +43,17 @@
                <ul class="dropdown-menu">
                  <li><a class="nav-link" href="#"> <i data-feather="user-plus"  style="color:darkorange;"></i>New Agent</a></li>
                  <li><a class="nav-link" href="#"> <i data-feather="settings" style="color:darkorange;"></i> Modify Agent</a></li>
-                 <li><a class="nav-link" href="#"><i data-feather="user-minus" style="color:darkorange;"></i> View Agents</a></li>
+                 <li><a class="nav-link" href="#"><i data-feather="list" style="color:darkorange;"></i> List Agents</a></li>
                </ul>
              </li>
+             <li class="dropdown">
+              <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="hexagon" style="color:rgb(4, 66, 30);"></i><span>Companies</span></a>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link" href="#"> <i data-feather="octagon"  style="color:rgb(4, 66, 30);"></i>New Company</a></li>
+                <li><a class="nav-link" href="#"> <i data-feather="settings" style="color:rgb(4, 66, 30);"></i>Modify Company</a></li>
+                <li><a class="nav-link" href="#"><i data-feather="list" style="color:rgb(4, 66, 30);"></i>List Companies</a></li>
+              </ul>
+            </li>
              <li class="dropdown">
                <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="home" style="color:rgb(21, 105, 28);"></i><span>Properties</span></a>
                <ul class="dropdown-menu">
