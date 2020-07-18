@@ -2,54 +2,31 @@
 @section('content')
       <!-- Main Content -->
       <div class="main-content">
-            <form class="form" method="POST" action="{{route('clients.store')}}" enctype="multipart/form-data">
+            <form class="form" method="POST" action="{{route('companies.store')}}" enctype="multipart/form-data">
                @csrf
                <section class="section">
                   <div class="row" style="margin:auto;">
                      <div class="card card-primary" style="margin:auto;">
                         <div class="card-header">
-                        <h4 style="margin:auto;">New client registration</h4>
+                        <h4 style="margin:auto;">New Company Registration</h4>
                         </div>
                         <div class="card-body">
                         <div class="form-row">
-                              <div class="form-group col-md-6">
-                              <label for="title">Title</label>
-                              <select id="title" class="form-control" name="title">
-                                 <option selected>Choose...</option>
-                                 <option value="mr">Mr</option>
-                                 <option value="mrs">Mrs</option>
-                                 <option value="ms">Ms</option>
-                              </select>
-                              
-                              </div>
-                              <div class="form-group col-md-6">
-                                 <label for="first_name">First Name</label>
-                                 <input type="text" class="form-control" id="first_name" placeholder="First Name" name="first_name" value="{{old('first_name')}}" required>
-                                 @if($errors->has('first_name'))
-                                    <p class="help text-danger">{{$errors->first('first_name')}}</p>
-                                 @endif
-                              </div>
-                           </div>
-                           <div class="form-row">
-                           <div class="form-group col-md-6">
-                              <label for="first_name">Middle Name</label>
-                              <input type="text" class="form-control" id="middle_name" placeholder="Middle Name" name="middle_name" value="{{old('middle_name')}}">
-                           </div>
-                           <div class="form-group col-md-6">
-                              <label for="last_name">Last Name</label>
-                              <input type="text" class="form-control" id="last_name" placeholder="Last name" name="last_name" value="{{old('last_name')}}" required>
-                              @if($errors->has('last_name'))
-                                    <p class="help text-danger">{{$errors->first('last_name')}}</p>
+                           <div class="form-group col-md-12">
+                              <label for="name">Company Name*</label>
+                              <input type="text" class="form-control" id="name" placeholder="Company Name" name="name" value="{{old('name')}}" required>
+                              @if($errors->has('name'))
+                               <p class="help text-danger">{{$errors->first('name')}}</p>
                               @endif
                            </div>
-                        </div>
+                       </div>
                         <div class="form-row">
                            <div class="form-group col-md-6">
-                              <label for="address_line_1">Address Line1</label>
-                              <input type="text" class="form-control" id="address_line_1" placeholder="1234 Main St" name="address_line_1" value="{{old('address_line_1')}}" required>
+                              <label for="address_line_1">Address Line1*</label>
+                              <input type="text" class="form-control" id="address_line_1" placeholder="1234 Main St" name="address_line_1" value="{{old('address_line_1')}}" required> 
                               @if($errors->has('address_line_1'))
-                              <p class="help text-danger">{{$errors->first('address_line_1')}}</p>
-                        @endif
+                               <p class="help text-danger">{{$errors->first('address_line_1')}}</p>
+                              @endif
                            </div>
                            <div class="form-group col-md-6">
                               <label for="address_line_2">Address Line 2</label>
@@ -60,10 +37,10 @@
                         <div class="form-row">
                            <div class="form-group col-md-6">
                               <label for="address_line_3">Address Line 3</label>
-                              <input type="text" class="form-control" id="address_line_1" placeholder="Street name" name="address_line_3" value="{{old('address_line_3')}}">
+                              <input type="text" class="form-control" id="address_line_3" placeholder="Street name" name="address_line_3" value="{{old('address_line_3')}}">
                            </div>
                            <div class="form-group col-md-6">
-                              <label for="city">City</label>
+                              <label for="city">City*</label>
                               <select id="city" class="form-control" name="city" required>
                                  <option selected>Choose...</option>
                                  <option value="Ottawa" {{ old('city') == "Ottawa" ? 'selected' : '' }}>Ottawa</option>
@@ -99,101 +76,73 @@
                               </select>
                            </div>
                            <div class="form-group col-md-6">
-                              <label for="inputZip">Zip</label>
-                              <input type="text" class="form-control" id="inputZip" name="zip_code" value="{{old('zip_code')}}">
+                              <label for="inputZip">Zip*</label>
+                              <input type="text" class="form-control" id="inputZip" name="zip_code" value="{{old('zip_code')}}" required>
                               @if($errors->has('zip_code'))
                                     <p class="help text-danger">{{$errors->first('zip_code')}}</p>
                               @endif
                            </div>
                         </div>
                         <div class="form-row">
-                           <div class="form-group col-md-6">
-                              <label>Date of birth</label>
-                              <input type="date" class="form-control datepicker" name="date_of_birth" value="{{old('date_of_birth')}}">
-                            </div>
-                            <div class="form-group col-md-6">
-                              <label>Marriage Day </label>
-                              <input type="date" class="form-control datepicker" name="marriage_day" value="{{old('marriage_day')}}">
-                            </div>
-                        </div>
-                        <div class="form-row">
                               <div class="form-group col-md-6">
-                                       <label for="phone_number">Phone Number</label><br>
+                                       <label for="phone_number">Phone Number*</label><br>
                                        <div class="input-group">
                                           <div class="input-group-prepend">
                                              <div class="input-group-text">
                                                 <i class="fas fa-phone"></i>
                                              </div>
                                           </div>
-                                          <input type="number" class="form-control phone-number" name="phone_number" value="{{old('phone_number')}}">
+                                          <input type="number" class="form-control phone-number" name="phone_number" value="{{old('phone_number')}}" required>
                                        </div>
                                  </div>
                                  <div class="form-group col-md-6">
-                                    <label for="phone_number">Cell Number</label><br>
+                                    <label for="fax">Fax Number</label><br>
                                     <div class="input-group">
                                        <div class="input-group-prepend">
                                        <div class="input-group-text">
                                           <i class="fas fa-phone"></i>
                                        </div>
                                        </div>
-                                       <input type="number" class="form-control phone-number" name="mobile_number" value="{{old('mobile_number')}}"> 
+                                       <input type="number" class="form-control phone-number" name="fax" value="{{old('fax')}}">
                                     </div>
-                                    @if($errors->has('mobile_number'))
-                                       <p class="help text-danger">{{$errors->first('mobile_number')}}</p>
+                                    @if($errors->has('fax'))
+                                       <p class="help text-danger">{{$errors->first('fax')}}</p>
                                     @endif
                               </div>
                         </div>
                         <div class="form-row">
                               <div class="form-group col-md-6">
-                                    <label for="email">Email</label><br>
+                                    <label for="email">Email*</label><br>
                                     <div class="input-group">
                                        <div class="input-group-prepend">
                                        <div class="input-group-text">
                                           <i class="fas fa-envelope"></i>
                                        </div>
                                        </div>
-                                       <input type="email" class="form-control email" name="email" value="{{old('email')}}" required> 
+                                       <input type="email" class="form-control email" name="email" value="{{old('email')}}" required>
                                     </div>
                                     @if($errors->has('email'))
                                        <p class="help text-danger">{{$errors->first('email')}}</p>
                                     @endif
                               </div>
-                              
                               <div class="form-group col-md-6">
-                                 <label for="client_photograph">Client Photograph</label><br>
-                                 <div class="input-group" style="border:1px solid rgb(230, 232, 235);padding:0.5em;">
-                                    <input type="file" name="client_photograph" id="photograph" name="photograph">
-                                 </div>
+                                 <label for="website">Website*</label>
+                                 <input type="text" class="form-control" id="website" name="website" value="{{old('website')}}" required>
+                                 @if($errors->has('website'))
+                                       <p class="help text-danger">{{$errors->first('website')}}</p>
+                                 @endif
                               </div>
+                           </div>
+                           <div class="form-row">
+                              <label>Notes</label>
+                              <div class="form-group col-md-12">
+                              <textarea type="text" class="form-control" id="note" name="notes" />{{old('notes')}}</textarea>
+                              </div>
+                           </div>
                         </div>
-                        <div class="form-row">
-                              <div class="form-group col-md-6">
-                                 <label for="client_type">Client Type</label>
-                                 <select id="city" class="form-control" name="client_type" required>
-                                    <option selected>Choose...</option>
-                                    <option value="Seller" {{ old('client_type') == "Seller" ? 'selected' : '' }}>Seller</option>
-                                    <option value="Buyer" {{ old('client_type') == "Buyer" ? 'selected' : '' }}>Buyer</option>
-                                 </select>
-                              </div>
-                              <div class="form-group col-md-6">
-                                    <label for="city">Agent reference</label>
-                                    <select id="city" class="form-control" name="agent_id" required>
-                                       <option selected>Choose...</option>
-                                       @foreach ($agents as $agent)
-                                          <option value="$agent_id">{{$agent->first_name}} {{$agent->last_name}}</option>
-                                       @endforeach
-                                    </select>
-                                 </div>
-                              </div>
-                              <div class="form-row">
-                                 <label>Notes for the client</label>
-                                 <div class="form-group col-md-12">
-                                    <textarea type="text" class="form-control" id="note" name="notes" />{{old('notes')}}</textarea>
-                                 </div>
-                              </div>
-                        </div>
-                     <div class="card-footer">
-                        <button class="btn btn-primary" type="submit" style="float:right;">Submit</button>
+                        <div class="card-footer">
+                              <button class="btn btn-danger" href="#" style="float:left;">Cancel</button>
+                              <button class="btn btn-primary" type="submit" style="float:right;">Submit</button>
                         </div>
                      </div>
                   </div>

@@ -33,8 +33,7 @@
                     <i data-feather="user-plus" style="color:rgb(11, 8, 195);">
                     </i>New Client</a>
                 </li>
-
-                 <li><a class="nav-link" href="#"><i data-feather="settings" style="color:rgb(11, 8, 195);"></i>Modify Client</a></li>
+                 {{-- <li><a class="nav-link" href="#"><i data-feather="settings" style="color:rgb(11, 8, 195);"></i>Modify Client</a></li> --}}
                  <li><a class="nav-link" href="{{route('clients.index')}}"><i data-feather="list" style="color:rgb(11, 8, 195);"></i>List Clients</a></li>
                </ul>
              </li>
@@ -42,16 +41,16 @@
                <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="users" style="color:rgb(179, 115, 37);"></i><span>Agents</span></a>
                <ul class="dropdown-menu">
                  <li><a class="nav-link" href="#"> <i data-feather="user-plus"  style="color:darkorange;"></i>New Agent</a></li>
-                 <li><a class="nav-link" href="#"> <i data-feather="settings" style="color:darkorange;"></i> Modify Agent</a></li>
+                 {{-- <li><a class="nav-link" href="#"> <i data-feather="settings" style="color:darkorange;"></i> Modify Agent</a></li> --}}
                  <li><a class="nav-link" href="#"><i data-feather="list" style="color:darkorange;"></i> List Agents</a></li>
                </ul>
              </li>
-             <li class="dropdown">
+             <li class="dropdown {{ Request::is('companies*') ? 'active' : '' }}">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="hexagon" style="color:rgb(4, 66, 30);"></i><span>Companies</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="#"> <i data-feather="octagon"  style="color:rgb(4, 66, 30);"></i>New Company</a></li>
-                <li><a class="nav-link" href="#"> <i data-feather="settings" style="color:rgb(4, 66, 30);"></i>Modify Company</a></li>
-                <li><a class="nav-link" href="#"><i data-feather="list" style="color:rgb(4, 66, 30);"></i>List Companies</a></li>
+                <li><a class="nav-link" href="{{route('companies.create')}}"> <i data-feather="octagon"  style="color:rgb(4, 66, 30);"></i>New Company</a></li>
+                {{-- <li><a class="nav-link" href="#"> <i data-feather="settings" style="color:rgb(4, 66, 30);"></i>Modify Company</a></li> --}}
+                <li><a class="nav-link" href="{{route('clients.index')}}"><i data-feather="list" style="color:rgb(4, 66, 30);"></i>List Companies</a></li>
               </ul>
             </li>
              <li class="dropdown">

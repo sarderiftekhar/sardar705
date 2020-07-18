@@ -40,7 +40,8 @@ Route::resource('clients','ClientController');
 
 // User Settings
 
-// 
+// Companies
+Route::resource('companies','CompanyController');
 
 
 

@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Client;
-use App\Agent;
-use Session;
+use App\Company;
 use Illuminate\Http\Request;
 
-class ClientController extends Controller
+class CompanyController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +14,8 @@ class ClientController extends Controller
      */
     public function index()
     {
-        $clients = Client::all();
-        return view('client.listOfClients',compact('clients'));
+        $companies = Company::all();
+        // return view('');
     }
 
     /**
@@ -27,8 +25,7 @@ class ClientController extends Controller
      */
     public function create()
     {
-        $agents = Agent::all();
-        return view('client.newClientRegistration',compact('agents'));
+        return view('company.newCompanyRegistration');
     }
 
     /**
@@ -39,24 +36,19 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        // return $request->all();
-        // request()->validate([
-        //     'title'=> 'required',
-        //     'first_name'=>'required',
-        //     'last_name'=>'required',
-        // ]);
-
-        $request->session()->flash('message', 'Client saved successfully.');
-        return back();
+        request()->validate([
+                'notes'=> 'required',
+            ]);
+        return redirect()->back();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Client  $client
+     * @param  \App\Company  $company
      * @return \Illuminate\Http\Response
      */
-    public function show(Client $client)
+    public function show(Company $company)
     {
         //
     }
@@ -64,10 +56,10 @@ class ClientController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Client  $client
+     * @param  \App\Company  $company
      * @return \Illuminate\Http\Response
      */
-    public function edit(Client $client)
+    public function edit(Company $company)
     {
         //
     }
@@ -76,10 +68,10 @@ class ClientController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Client  $client
+     * @param  \App\Company  $company
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Client $client)
+    public function update(Request $request, Company $company)
     {
         //
     }
@@ -87,10 +79,10 @@ class ClientController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Client  $client
+     * @param  \App\Company  $company
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Client $client)
+    public function destroy(Company $company)
     {
         //
     }
