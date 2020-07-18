@@ -19,7 +19,6 @@ class CompanySeeder extends Seeder
             'state'=>'state',
             'city'=>'Berry',
             'zip'=>'1000',
-            'country'=>'Canada',
             'phone'=>'0123456789',
             'fax'=>'0123456789',
             'email'=>'sardar705@gmail.com',
