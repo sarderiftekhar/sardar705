@@ -29,26 +29,7 @@
  <!-- Custom JS File -->
  <script src="{{asset('assets/js/custom.js')}}"></script>
  
+ @yield('datatable')
  
-
-
-
-
-
-
-
- <script>
-   $(document).ready(function () {
-         $('#client_list').DataTable({
-             responsive: true,
-             colReorder: true,
-             dom: 'Bfrtip',
-             buttons: [
-                 'csv', 'excel', 'pdf'
-             ]
-         });
-     });
-</script>
-
 </body>
 </html>

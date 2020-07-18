@@ -152,7 +152,7 @@
 
    @if(Session::has('message'))
          <script>
-               swal("Client saved successfully!");
+               swal("Company saved successfully!");
          </script>
    @endif
 @stop

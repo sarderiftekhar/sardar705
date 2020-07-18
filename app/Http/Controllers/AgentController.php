@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Agent;
+use App\Company;
 use Illuminate\Http\Request;
 
 class AgentController extends Controller
@@ -14,7 +15,8 @@ class AgentController extends Controller
      */
     public function index()
     {
-        //
+        $agents = Agent::all();
+        return view('agent.listOfAgents',compact('agents'));
     }
 
     /**
@@ -24,7 +26,8 @@ class AgentController extends Controller
      */
     public function create()
     {
-        //
+        $companies = Company::all();
+        return view('agent.newAgentRegistration',compact('companies'));
     }
 
     /**

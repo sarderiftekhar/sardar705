@@ -31,6 +31,7 @@ Route::get('/blank', 'HomeController@blank')->name('blank');
 Route::resource('clients','ClientController');
 
 // Agents
+Route::resource('agents','AgentController');
 
 // Properties
 

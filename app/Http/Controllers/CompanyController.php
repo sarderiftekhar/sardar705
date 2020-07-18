@@ -15,7 +15,7 @@ class CompanyController extends Controller
     public function index()
     {
         $companies = Company::all();
-        // return view('');
+        return view('company.listOfCompanies',compact('companies'));
     }
 
     /**
