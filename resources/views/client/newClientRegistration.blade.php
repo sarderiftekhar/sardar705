@@ -10,31 +10,68 @@
                         <div class="card-header">
                         <h4 style="margin:auto;">New client registration</h4>
                         </div>
-                        <div class="card-body">
+                     <div class="card-body">
                         <div class="form-row">
                               <div class="form-group col-md-6">
-                              <label for="title">Title</label>
-                              <select id="title" class="form-control" name="title">
-                                 <option selected>Choose...</option>
-                                 <option value="mr">Mr</option>
-                                 <option value="mrs">Mrs</option>
-                                 <option value="ms">Ms</option>
-                              </select>
-                              
+                                    <div class="section-title">Title</div>
+                                    <div class="pretty p-default p-round">
+                                       <input type="radio" name="title" value="Mr">
+                                       <div class="state">
+                                          <label>Mr</label>
+                                       </div>
+                                    </div>
+                                    <div class="pretty p-default p-round">
+                                       <input type="radio" name="title" value="Mrs">
+                                       <div class="state">
+                                          <label>Mrs</label>
+                                       </div>
+                                    </div>
+                                    <div class="pretty p-default p-round">
+                                       <input type="radio" name="title" value="Ms">
+                                       <div class="state">
+                                          <label>Ms</label>
+                                       </div>
+                                    </div>
                               </div>
                               <div class="form-group col-md-6">
-                                 <label for="first_name">First Name</label>
-                                 <input type="text" class="form-control" id="first_name" placeholder="First Name" name="first_name" value="{{old('first_name')}}" required>
-                                 @if($errors->has('first_name'))
-                                    <p class="help text-danger">{{$errors->first('first_name')}}</p>
-                                 @endif
+                                    <div class="section-title">Marital status</div>
+                                    <div class="pretty p-icon p-round p-plain p-smooth">
+                                       <input type="radio" name="plain">
+                                       <div class="state p-primary-o">
+                                          <i class="icon material-icons">accessibility</i>
+                                          <label>Single</label>
+                                       </div>
+                                    </div>
+                                    <div class="pretty p-icon p-round p-plain p-smooth">
+                                       <input type="radio" name="plain">
+                                       <div class="state p-info-o">
+                                          <i class="icon material-icons">supervisor_account</i>
+                                          <label>Married</label>
+                                       </div>
+                                    </div>
+                                    <div class="pretty p-icon p-round p-plain p-smooth">
+                                       <input type="radio" name="plain">
+                                       <div class="state p-success-o">
+                                          <i class="icon material-icons">favorite</i>
+                                          <label>In relation </label>
+                                       </div>
+                                    </div>
                               </div>
+                        </div>
+                        <div class="form-row">
+                           <div class="form-group col-md-6">
+                              <label for="first_name">First Name</label>
+                              <input type="text" class="form-control" id="first_name" placeholder="First Name" name="first_name" value="{{old('first_name')}}" required>
+                              @if($errors->has('first_name'))
+                                 <p class="help text-danger">{{$errors->first('first_name')}}</p>
+                              @endif
                            </div>
-                           <div class="form-row">
                            <div class="form-group col-md-6">
                               <label for="first_name">Middle Name</label>
                               <input type="text" class="form-control" id="middle_name" placeholder="Middle Name" name="middle_name" value="{{old('middle_name')}}">
                            </div>
+                        </div>
+                        <div class="form-row">
                            <div class="form-group col-md-6">
                               <label for="last_name">Last Name</label>
                               <input type="text" class="form-control" id="last_name" placeholder="Last name" name="last_name" value="{{old('last_name')}}" required>
@@ -42,25 +79,39 @@
                                     <p class="help text-danger">{{$errors->first('last_name')}}</p>
                               @endif
                            </div>
-                        </div>
-                        <div class="form-row">
                            <div class="form-group col-md-6">
                               <label for="address_line_1">Address Line1</label>
                               <input type="text" class="form-control" id="address_line_1" placeholder="1234 Main St" name="address_line_1" value="{{old('address_line_1')}}" required>
                               @if($errors->has('address_line_1'))
                               <p class="help text-danger">{{$errors->first('address_line_1')}}</p>
-                        @endif
+                            @endif
                            </div>
+                        </div>
+                        <div class="form-row">
                            <div class="form-group col-md-6">
                               <label for="address_line_2">Address Line 2</label>
                               <input type="text" class="form-control" id="address_line_2"
                                  placeholder="Apartment, studio, or floor" name="address_line_2" value="{{old('address_line_2')}}">
                            </div>
-                        </div>
-                        <div class="form-row">
                            <div class="form-group col-md-6">
                               <label for="address_line_3">Address Line 3</label>
                               <input type="text" class="form-control" id="address_line_1" placeholder="Street name" name="address_line_3" value="{{old('address_line_3')}}">
+                           </div>
+                        </div>
+                        <div class="form-row">
+                           <div class="form-group col-md-6">
+                              <label for="inputState">State</label>
+                              <select id="inputState" class="form-control" name="state">
+                              <option selected>Choose...</option>
+                              <option value="Alberta" {{ old('state') == "Alberta" ? 'selected' : '' }}>Alberta</option>
+                              <option value="British Columbia" {{ old('state') == "British Columbia" ? 'selected' : '' }}>British Columbia</option>
+                              <option value="Manitoba" {{ old('state') == "Manitoba" ? 'selected' : '' }}>Manitoba</option>
+                              <option value="New Brunswickc" {{ old('state') == "New Brunswickc" ? 'selected' : '' }}>New Brunswickc</option>
+                              <option value="Newfoundland and Labrador" {{ old('state') == "Newfoundland and Labrador" ? 'selected' : '' }}>Newfoundland and Labrador</option>
+                              <option value="Northwest Territories" {{ old('state') == "Northwest Territories" ? 'selected' : '' }}>Northwest Territories</option>
+                              <option value="Nova Scotia" {{ old('state') == "Nova Scotia" ? 'selected' : '' }}>Nova Scotia</option>
+                              <option value="Nunavut" {{ old('state') == "Nunavut" ? 'selected' : '' }}>Nunavut</option>
+                              </select>
                            </div>
                            <div class="form-group col-md-6">
                               <label for="city">City</label>
@@ -85,25 +136,17 @@
                         </div>
                         <div class="form-row">
                            <div class="form-group col-md-6">
-                              <label for="inputState">State</label>
-                              <select id="inputState" class="form-control" name="state">
-                              <option selected>Choose...</option>
-                              <option value="Alberta" {{ old('state') == "Alberta" ? 'selected' : '' }}>Alberta</option>
-                              <option value="British Columbia" {{ old('state') == "British Columbia" ? 'selected' : '' }}>British Columbia</option>
-                              <option value="Manitoba" {{ old('state') == "Manitoba" ? 'selected' : '' }}>Manitoba</option>
-                              <option value="New Brunswickc" {{ old('state') == "New Brunswickc" ? 'selected' : '' }}>New Brunswickc</option>
-                              <option value="Newfoundland and Labrador" {{ old('state') == "Newfoundland and Labrador" ? 'selected' : '' }}>Newfoundland and Labrador</option>
-                              <option value="Northwest Territories" {{ old('state') == "Northwest Territories" ? 'selected' : '' }}>Northwest Territories</option>
-                              <option value="Nova Scotia" {{ old('state') == "Nova Scotia" ? 'selected' : '' }}>Nova Scotia</option>
-                              <option value="Nunavut" {{ old('state') == "Nunavut" ? 'selected' : '' }}>Nunavut</option>
-                              </select>
-                           </div>
-                           <div class="form-group col-md-6">
                               <label for="inputZip">Zip</label>
                               <input type="text" class="form-control" id="inputZip" name="zip_code" value="{{old('zip_code')}}">
                               @if($errors->has('zip_code'))
                                     <p class="help text-danger">{{$errors->first('zip_code')}}</p>
                               @endif
+                           </div>
+                           <div class="form-group col-md-6">
+                              <label for="country">Country</label>
+                              <select id="country" class="form-control" name="country">
+                              <option value="Canada" {{ old('country') == "Canada" ? 'selected' : '' }} selected>Canada</option>
+                              </select>
                            </div>
                         </div>
                         <div class="form-row">
@@ -158,7 +201,6 @@
                                        <p class="help text-danger">{{$errors->first('email')}}</p>
                                     @endif
                               </div>
-                              
                               <div class="form-group col-md-6">
                                  <label for="client_photograph">Client Photograph</label><br>
                                  <div class="input-group" style="border:1px solid rgb(230, 232, 235);padding:0.5em;">
@@ -184,7 +226,43 @@
                                        @endforeach
                                     </select>
                                  </div>
+                        </div>
+                        <div class="form-row">
+                           <label for="city">Source of origin</label>
+                              <div class="form-group col-md-12">
+                                 <div class="pretty p-default p-curve">
+                                    <input type="radio" name="source_of_origin" value="Agent Reference"/>
+                                    <div class="state p-primary-o">
+                                       <label>Agent Reference</label>
+                                    </div>
+                                 </div>
+                                 <div class="pretty p-default p-curve">
+                                    <input type="radio" name="source_of_origin" />
+                                    <div class="state p-success-o">
+                                       <label>Facebook</label>
+                                    </div>
+                                 </div>
+                                 <div class="pretty p-default p-curve">
+                                    <input type="radio" name="source_of_origin" />
+                                    <div class="state p-info-o">
+                                       <label>Word of Mouth</label>
+                                    </div>
+                                 </div>
+                                 <div class="pretty p-default p-curve">
+                                    <input type="radio" name="source_of_origin" />
+                                    <div class="state p-warning-o">
+                                       <label>Website</label>
+                                    </div>
+                                 </div>
+                                 <div class="pretty p-default p-curve">
+                                    <input type="radio" name="source_of_origin" />
+                                    <div class="state p-danger-o">
+                                       <label>Search engine</label>
+                                    </div>
+                                 </div>
                               </div>
+                        </div>
+
                               <div class="form-row">
                                  <label>Notes for the client</label>
                                  <div class="form-group col-md-12">

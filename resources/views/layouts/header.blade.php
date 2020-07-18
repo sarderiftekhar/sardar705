@@ -13,6 +13,7 @@
   <!-- Template CSS -->
   <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
   <link rel="stylesheet" href="{{asset('assets/css/components.css')}}">
+  <link rel="stylesheet" href="{{asset('assets/bundles/pretty-checkbox/pretty-checkbox.min.css')}}">
   
   {{-- Datatables --}}
   <link rel="stylesheet" href="{{asset('assets/bundles/datatables/datatables.min.css')}}">
