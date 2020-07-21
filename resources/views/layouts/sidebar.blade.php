@@ -53,10 +53,10 @@
                 <li><a class="nav-link" href="{{route('companies.index')}}"><i data-feather="list" style="color:rgb(4, 66, 30);"></i>List Companies</a></li>
               </ul>
             </li>
-             <li class="dropdown">
+            <li class="dropdown {{ Request::is('properties*') ? 'active' : '' }}">
                <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="home" style="color:rgb(21, 105, 28);"></i><span>Properties</span></a>
                <ul class="dropdown-menu">
-                 <li><a class="nav-link" href="#"> <i data-feather="send" style="color:rgb(21, 105, 28);"></i>New Properties</a></li>
+                 <li><a class="nav-link" href="{{route('properties.create')}}"> <i data-feather="send" style="color:rgb(21, 105, 28);"></i>New Properties</a></li>
                  <li><a class="nav-link" href="#"> <i data-feather="settings" style="color:rgb(21, 105, 28);"></i>Modify Properties</a></li>
                  <li><a class="nav-link" href="#"><i data-feather="info" style="color:rgb(21, 105, 28);"></i>View Properties</a></li>
                  <li><a class="nav-link" href="#"><i data-feather="layout" style="color:rgb(21, 105, 28);"></i>Property Reports</a></li>

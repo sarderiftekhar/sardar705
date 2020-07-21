@@ -34,6 +34,7 @@ Route::resource('clients','ClientController');
 Route::resource('agents','AgentController');
 
 // Properties
+Route::resource('properties','PropertyController');
 
 // Documents
 

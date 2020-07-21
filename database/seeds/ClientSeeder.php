@@ -20,7 +20,7 @@ class ClientSeeder extends Seeder
             'address_line_2' => 'Queens Road',
             'address_line_3' => 'Plaistow',
             'zip_code' => '1000',
-            'state' => 'Quebec',
+            'province' => 'Quebec',
             'city' => 'Berry',
             'email'=>'sardar705@gmail.com',
             'phone_number'=>'0124d56799',

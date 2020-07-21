@@ -16,7 +16,7 @@ class CompanySeeder extends Seeder
             'address_line_1' => 'address_line',
             'address_line_2' => 'address_line_2',
             'address_line_3' => 'address_line_3',
-            'state'=>'state',
+            'province'=>'province',
             'city'=>'Berry',
             'zip'=>'1000',
             'phone'=>'0123456789',

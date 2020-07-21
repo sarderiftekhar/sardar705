@@ -62,17 +62,17 @@
                         </div>
                         <div class="form-row">
                            <div class="form-group col-md-6">
-                              <label for="inputState">State</label>
-                              <select id="inputState" class="form-control" name="state">
+                              <label for="inputProvince">Province</label>
+                              <select id="inputProvince" class="form-control" name="province">
                               <option selected>Choose...</option>
-                              <option value="Alberta" {{ old('state') == "Alberta" ? 'selected' : '' }}>Alberta</option>
-                              <option value="British Columbia" {{ old('state') == "British Columbia" ? 'selected' : '' }}>British Columbia</option>
-                              <option value="Manitoba" {{ old('state') == "Manitoba" ? 'selected' : '' }}>Manitoba</option>
-                              <option value="New Brunswickc" {{ old('state') == "New Brunswickc" ? 'selected' : '' }}>New Brunswickc</option>
-                              <option value="Newfoundland and Labrador" {{ old('state') == "Newfoundland and Labrador" ? 'selected' : '' }}>Newfoundland and Labrador</option>
-                              <option value="Northwest Territories" {{ old('state') == "Northwest Territories" ? 'selected' : '' }}>Northwest Territories</option>
-                              <option value="Nova Scotia" {{ old('state') == "Nova Scotia" ? 'selected' : '' }}>Nova Scotia</option>
-                              <option value="Nunavut" {{ old('state') == "Nunavut" ? 'selected' : '' }}>Nunavut</option>
+                              <option value="Alberta" {{ old('province') == "Alberta" ? 'selected' : '' }}>Alberta</option>
+                              <option value="British Columbia" {{ old('province') == "British Columbia" ? 'selected' : '' }}>British Columbia</option>
+                              <option value="Manitoba" {{ old('province') == "Manitoba" ? 'selected' : '' }}>Manitoba</option>
+                              <option value="New Brunswickc" {{ old('province') == "New Brunswickc" ? 'selected' : '' }}>New Brunswickc</option>
+                              <option value="Newfoundland and Labrador" {{ old('province') == "Newfoundland and Labrador" ? 'selected' : '' }}>Newfoundland and Labrador</option>
+                              <option value="Northwest Territories" {{ old('province') == "Northwest Territories" ? 'selected' : '' }}>Northwest Territories</option>
+                              <option value="Nova Scotia" {{ old('province') == "Nova Scotia" ? 'selected' : '' }}>Nova Scotia</option>
+                              <option value="Nunavut" {{ old('province') == "Nunavut" ? 'selected' : '' }}>Nunavut</option>
                               </select>
                            </div>
                            <div class="form-group col-md-6">
