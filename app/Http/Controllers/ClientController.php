@@ -6,6 +6,8 @@ use App\Client;
 use App\Agent;
 use Session;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\StoreClientRequest;
 
 class ClientController extends Controller
 {
@@ -37,15 +39,16 @@ class ClientController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreClientRequest $request)
     {
-        // return $request->all();
-        // request()->validate([
-        //     'title'=> 'required',
-        //     'first_name'=>'required',
-        //     'last_name'=>'required',
-        // ]);
-
+        $client = Client::create($request->all());
+        
+        if($request->hasFile('client_photograph')){
+            $path = Storage::disk('local')->put($request->file('client_photograph')->getClientOriginalName(),$request->file('client_photograph')->get());
+            $path = $request->file('client_photograph')->store('/images/client/');
+            $client->client_photograph = $path;
+            $client->save();
+        }
         $request->session()->flash('message', 'Client saved successfully.');
         return back();
     }

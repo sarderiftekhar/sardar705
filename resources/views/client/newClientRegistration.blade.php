@@ -36,21 +36,21 @@
                               <div class="form-group col-md-6">
                                     <div class="section-title">Marital status</div>
                                     <div class="pretty p-icon p-round p-plain p-smooth">
-                                       <input type="radio" name="plain">
+                                       <input type="radio" name="marital_status">
                                        <div class="state p-primary-o">
                                           <i class="icon material-icons">accessibility</i>
                                           <label>Single</label>
                                        </div>
                                     </div>
                                     <div class="pretty p-icon p-round p-plain p-smooth">
-                                       <input type="radio" name="plain">
+                                       <input type="radio" name="marital_status">
                                        <div class="state p-info-o">
                                           <i class="icon material-icons">supervisor_account</i>
                                           <label>Married</label>
                                        </div>
                                     </div>
                                     <div class="pretty p-icon p-round p-plain p-smooth">
-                                       <input type="radio" name="plain">
+                                       <input type="radio" name="marital_status">
                                        <div class="state p-success-o">
                                           <i class="icon material-icons">favorite</i>
                                           <label>In relation </label>
@@ -204,7 +204,7 @@
                               <div class="form-group col-md-6">
                                  <label for="client_photograph">Client Photograph</label><br>
                                  <div class="input-group" style="border:1px solid rgb(230, 232, 235);padding:0.5em;">
-                                    <input type="file" name="client_photograph" id="photograph" name="photograph">
+                                    <input type="file" name="client_photograph" id="photograph">
                                  </div>
                               </div>
                         </div>
@@ -222,7 +222,7 @@
                                     <select id="city" class="form-control" name="agent_id" required>
                                        <option selected>Choose...</option>
                                        @foreach ($agents as $agent)
-                                          <option value="$agent_id">{{$agent->first_name}} {{$agent->last_name}}</option>
+                                          <option value="{{$agent->id}}">{{$agent->first_name}} {{$agent->last_name}}</option>
                                        @endforeach
                                     </select>
                                  </div>
