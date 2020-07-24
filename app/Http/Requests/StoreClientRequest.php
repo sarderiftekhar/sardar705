@@ -34,7 +34,7 @@ class StoreClientRequest extends FormRequest
             'address_line_1'=>'required',
             'city'=>'required',
             'zip_code'=>'required',
-            'client_photograph' => 'mimes:jpeg,jpg,png,gif|required|max:10000'
+            // 'client_photograph' => 'mimes:jpeg,jpg,png,gif|required|max:10000'
         ];
     }
 }

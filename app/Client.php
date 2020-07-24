@@ -22,7 +22,7 @@ class Client extends Model
     }
     public function setEmail($value) 
     {
-        $this->attributes['email'] = strlower($value);
+        $this->attributes['email'] = strtolower($value);
     }
 
 
