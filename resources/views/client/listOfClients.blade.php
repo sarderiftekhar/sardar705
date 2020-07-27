@@ -14,7 +14,6 @@
                                  <table class="table table-striped display" id="client_list"  style="width:100%">
                                     <thead>
                                        <tr>
-                                             <th>ID</th>
                                              <th>First Name</th>
                                              <th>Last Name</th>
                                              <th>Address Line 1</th>
@@ -30,7 +29,6 @@
                                     <tbody>
                                        @foreach ($clients as $client)
                                              <tr>
-                                                <td>{{$client->id}}</td>
                                                 <td>{{$client->first_name}}</td>
                                                 <td>{{$client->last_name}}</td>
                                                 <td>{{$client->address_line_1}}</td>
@@ -42,7 +40,7 @@
                                                 <td>{{$client->agent->first_name}}</td>
                                                 <td>
                                                    <a href="{{route('clients.show',['client'=>$client])}}" class="btn btn-primary">Details</a>
-                                                   <a href="" class="btn btn-info">Modify</a>
+                                                   <a href="{{route('clients.edit',['client'=>$client])}}" class="btn btn-danger">Modify</a>
                                                 </td>
                                              </tr>
                                        @endforeach

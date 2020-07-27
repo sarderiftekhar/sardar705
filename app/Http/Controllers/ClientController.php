@@ -11,6 +11,7 @@ use App\Http\Requests\StoreClientRequest;
 
 class ClientController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -72,7 +73,8 @@ class ClientController extends Controller
      */
     public function edit(Client $client)
     {
-        //
+        $agents = Agent::all();
+        return view('client.editClientDetails',compact('client','agents'));
     }
 
     /**
@@ -82,9 +84,12 @@ class ClientController extends Controller
      * @param  \App\Client  $client
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Client $client)
+    public function update(StoreClientRequest $request, Client $client)
     {
-        //
+        $client->update($request->all());
+        $agents = Agent::all();
+        $request->session()->flash('message', 'Client Information Edited successfully.');
+        return view('client.editClientDetails',compact('client','agents'));
     }
 
     /**

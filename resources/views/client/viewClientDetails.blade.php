@@ -6,15 +6,18 @@
                   <div class="row" style="margin:auto;">
                      <div class="card card-primary col-md-6" style="margin:auto;">
                         <div class="card-header">
-                        <h4 style="margin:auto;">Details of {{$client->first_name}} {{$client->last_name}}</h4>
+                           <h4 style="margin:auto;margin-left:17em;">{{$client->first_name}} {{$client->last_name}}</h4>
+                           <a style="float:right;" class="btn btn-primary" href="{{route('clients.index')}}">
+                              Back
+                           </a>
                         </div>
                      <div class="card-body">
-                     <div class="form-row">
-                        <div class="form-group col-md-6">
-                           <label for="client_photograph">Client Photograph</label><br>
-                           <img src= "{{asset($client->client_photograph)}}" width="250px" height="250px">
+                        <div class="form-row">
+                           <div class="form-group col-md-12 text-center" style="margin:auto;">
+                              <img src= "{{asset($client->client_photograph)}}" width="250px" height="250px" style="border:1px solid cornflowerblue;">
+                           </div>
                         </div>
-                     </div>
+                        <br>
                         <div class="form-row">
                            <div class="form-group col-md-6">
                               <label for="title">Title</label>
@@ -145,18 +148,14 @@
                               </div>
                         </div>
                      <div class="card-footer">
-                        <button class="btn btn-primary" type="submit" style="float:right;">Submit</button>
-                        </div>
+                           <a style="float:right;" class="btn btn-primary" href="{{route('clients.index')}}">
+                              Go back
+                           </a>
+                     </div>
                      </div>
                   </div>
                </section>
       </div>
-
-   @if(Session::has('message'))
-         <script>
-               swal("Client saved successfully!");
-         </script>
-   @endif
 @stop
 
  
