@@ -35,6 +35,9 @@
         }
     },
     "autoload": {
+        "files": [
+            "App/Http/Helpers/DateFormat.php"
+        ],
         "psr-4": {
             "App\\": "app/"
         },

@@ -41,7 +41,7 @@
                                                 <td>{{$client->email}}</td>
                                                 <td>{{$client->agent->first_name}}</td>
                                                 <td>
-                                                   <a href="" class="btn btn-primary">Details</a>
+                                                   <a href="{{route('clients.show',['client'=>$client])}}" class="btn btn-primary">Details</a>
                                                    <a href="" class="btn btn-info">Modify</a>
                                                 </td>
                                              </tr>

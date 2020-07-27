@@ -45,7 +45,7 @@ class ClientController extends Controller
         
         if($request->hasFile('client_photograph')){
             $path = Storage::disk('local')->put($request->file('client_photograph')->getClientOriginalName(),$request->file('client_photograph')->get());
-            $path = $request->file('client_photograph')->store('/images/client/');
+            $path = $request->file('client_photograph')->store('/images/client');
             $client->client_photograph = $path;
             $client->save();
         }
@@ -61,7 +61,7 @@ class ClientController extends Controller
      */
     public function show(Client $client)
     {
-        //
+        return view('client.viewClientDetails',compact('client'));
     }
 
     /**

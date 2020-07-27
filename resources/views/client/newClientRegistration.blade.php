@@ -215,6 +215,12 @@
                                     <option selected>Choose...</option>
                                     <option value="Seller" {{ old('client_type') == "Seller" ? 'selected' : '' }}>Seller</option>
                                     <option value="Buyer" {{ old('client_type') == "Buyer" ? 'selected' : '' }}>Buyer</option>
+                                    <option value="Lease Land Lord" {{ old('client_type') == "Lease-Land-Lord" ? 'selected' : '' }}>Lease Land Lord</option>
+                                    <option value="Lease Tenant" {{ old('client_type') == "Lease-Tenant" ? 'selected' : '' }}>Lease Tenant</option>
+                                    <option value="Commercial Seller" {{ old('client_type') == "Commercial Seller" ? 'selected' : '' }}>Commercial Seller</option>
+                                    <option value="Commercial Buyer" {{ old('client_type') == "Commercial Buyer" ? 'selected' : '' }}> Commercial Buyer</option>
+                                    <option value="Commercial Lease Land Lord " {{ old('client_type') == "Commercial Lease Land Lord" ? 'selected' : '' }}>Commercial Lease Land Lord</option>
+                                    <option value="Commercial Lease Tenant" {{ old('client_type') == "Commercial Lease Tenant" ? 'selected' : '' }}>Commercial Lease Tenant</option>
                                  </select>
                               </div>
                               <div class="form-group col-md-6">
