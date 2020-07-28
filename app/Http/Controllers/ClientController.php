@@ -45,8 +45,7 @@ class ClientController extends Controller
         $client = Client::create($request->all());
         
         if($request->hasFile('client_photograph')){
-            $path = Storage::disk('local')->put($request->file('client_photograph')->getClientOriginalName(),$request->file('client_photograph')->get());
-            $path = $request->file('client_photograph')->store('/images/client');
+            $path = Storage::disk('public')->put('client/images/',$request->file('client_photograph'));
             $client->client_photograph = $path;
             $client->save();
         }

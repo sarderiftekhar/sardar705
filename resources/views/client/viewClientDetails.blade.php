@@ -14,7 +14,7 @@
                      <div class="card-body">
                         <div class="form-row">
                            <div class="form-group col-md-12 text-center" style="margin:auto;">
-                              <img src= "{{asset($client->client_photograph)}}" width="250px" height="250px" style="border:1px solid cornflowerblue;">
+                              <img src= "{{ Storage::disk('public')->url($client->client_photograph) }}" width="250px" height="250px" style="border:1px solid cornflowerblue;">
                            </div>
                         </div>
                         <br>
