@@ -38,9 +38,9 @@
                            <div class="form-group col-md-6">
                               <label for="last_name">Last Name</label>
                               <input type="text" class="form-control" id="last_name" placeholder="Last name" name="last_name" value="{{old('last_name')}}" required>
-                              @if($errors->has('last_name'))
-                                    <p class="help text-danger">{{$errors->first('last_name')}}</p>
-                              @endif
+                                 @if($errors->has('last_name'))
+                                       <p class="help text-danger">{{$errors->first('last_name')}}</p>
+                                 @endif
                            </div>
                         </div>
                         <div class="form-row">
@@ -87,37 +87,57 @@
                               </div>
                         </div>
                         <div class="form-row">
-                              <div class="form-group col-md-6">
-                                 <label for="client_type">Agent Type</label>
-                                 <select id="city" class="form-control" name="client_type" required>
+                                    <div class="form-group col-md-6">
+                                       <label for="client_type">Agent Type</label>
+                                       <select id="city" class="form-control" name="client_type" required>
+                                          <option selected>Choose...</option>
+                                          <option value="Seller" {{ old('client_type') == "Seller" ? 'selected' : '' }}>Seller</option>
+                                          <option value="Buyer" {{ old('client_type') == "Buyer" ? 'selected' : '' }}>Buyer</option>
+                                          <option value="Both" {{ old('client_type') == "Both" ? 'selected' : '' }}>Both</option>
+                                       </select>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                          <label for="city">Company registered with</label>
+                                          <select id="city" class="form-control" name="agent_id" required>
+                                             <option selected>Choose...</option>
+                                             @foreach ($companies as $company)
+                                                <option value="$company_id">{{$company->name}}</option>
+                                             @endforeach
+                                          </select>
+                                    </div>
+                        </div>
+                        <div class="form-row">
+                           <div class="form-group col-md-6">
+                              <label for="client_type">Agent Type</label>
+                              <select id="city" class="form-control" name="client_type" required>
+                                 <option selected>Choose...</option>
+                                 <option value="Seller" {{ old('client_type') == "Seller" ? 'selected' : '' }}>Seller</option>
+                                 <option value="Buyer" {{ old('client_type') == "Buyer" ? 'selected' : '' }}>Buyer</option>
+                                 <option value="Both" {{ old('client_type') == "Both" ? 'selected' : '' }}>Both</option>
+                              </select>
+                           </div>
+                           <div class="form-group col-md-6">
+                                 <label for="city">Company registered with</label>
+                                 <select id="city" class="form-control" name="agent_id" required>
                                     <option selected>Choose...</option>
-                                    <option value="Seller" {{ old('client_type') == "Seller" ? 'selected' : '' }}>Seller</option>
-                                    <option value="Buyer" {{ old('client_type') == "Buyer" ? 'selected' : '' }}>Buyer</option>
-                                    <option value="Both" {{ old('client_type') == "Both" ? 'selected' : '' }}>Both</option>
+                                    @foreach ($companies as $company)
+                                       <option value="$company_id">{{$company->name}}</option>
+                                    @endforeach
                                  </select>
-                              </div>
-                              <div class="form-group col-md-6">
-                                    <label for="city">Company registered with</label>
-                                    <select id="city" class="form-control" name="agent_id" required>
-                                       <option selected>Choose...</option>
-                                       @foreach ($companies as $company)
-                                          <option value="$company_id">{{$company->name}}</option>
-                                       @endforeach
-                                    </select>
-                                 </div>
-                              </div>
-                              <div class="form-row">
+                           </div>
+                        </div>
+                        <div class="form-row">
                                  <label>Notes for the agent</label>
                                  <div class="form-group col-md-12">
                                     <textarea type="text" class="form-control" id="note" name="notes" />{{old('notes')}}</textarea>
                                  </div>
                               </div>
                         </div>
-                     <div class="card-footer">
-                        <button class="btn btn-danger" href="#" style="float:left;">Cancel</button>
-                        <button class="btn btn-primary" type="submit" style="float:right;">Submit</button>
+                        <div class="card-footer">
+                           <button class="btn btn-danger" href="#" style="float:left;">Cancel</button>
+                           <button class="btn btn-primary" type="submit" style="float:right;">Submit</button>
+                           </div>
                         </div>
-                     </div>
                   </div>
                </section>
             </form>
