@@ -45,17 +45,17 @@ class ClientController extends Controller
     {
         $client = Client::create($request->all());
         
-        if($request->hasFile('client_photograph'))
+        if($request->hasFile('photograph'))
         {
             $validator = Validator::make($request->all(), [
-                  'client_photograph' => 'required | mimes:jpeg,jpg,png | max:5000',
+                  'photograph' => 'required | mimes:jpeg,jpg,png | max:5000',
             ]);
             if ($validator->fails()) 
             {
                  return redirect()->back()->with('image_error');
             }
-           $path = Storage::disk('public')->put('client/images/',$request->file('client_photograph'));
-           $client->client_photograph = $path;
+           $path = Storage::disk('public')->put('client/images/',$request->file('photograph'));
+           $client->photograph = $path;
            $client->save();
         }
         $request->session()->flash('message');

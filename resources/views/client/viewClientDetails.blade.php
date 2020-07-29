@@ -13,21 +13,27 @@
                         </div>
                      <div class="card-body">
                         <div class="form-row">
-                           <div class="form-group col-md-12 text-center" style="margin:auto;">
-                              <img src= "{{ Storage::disk('public')->url($client->client_photograph) }}" width="250px" height="250px" style="border:1px solid cornflowerblue;">
+                           <div class="form-group col-md-6" style="padding:1em;">
+                              <div class="form-group col-md-3 text-center" style="float:left;">
+                                 <img src= "{{ Storage::disk('public')->url($client->photograph) }}" width="250px" height="250px" style="border:1px solid cornflowerblue;">
+                              </div>
+                           </div>
+                           <div class="form-group col-md-6">
+                              <div class="form-group col-md-12">
+                                 <label for="title">Client Rating</label>
+                                 <input type="text" class="form-control" id="title" value="{{$client->client_rating}}" readonly>
+                              </div>
+                              <div class="form-group col-md-12">
+                                 <label for="title">Title</label>
+                                 <input type="text" class="form-control" id="title" value="{{$client->title}}" readonly>
+                              </div>
+                              <div class="form-group col-md-12">
+                                 <label for="marital_status">Marital status</label>
+                                 <input type="text" class="form-control" id="marital_status" value="{{$client->marital_status}}" readonly>
+                              </div>
                            </div>
                         </div>
                         <br>
-                        <div class="form-row">
-                           <div class="form-group col-md-6">
-                              <label for="title">Title</label>
-                              <input type="text" class="form-control" id="title" value="{{$client->title}}" readonly>
-                           </div>
-                           <div class="form-group col-md-6">
-                              <label for="marital_status">Marital status</label>
-                              <input type="text" class="form-control" id="marital_status" value="{{$client->marital_status}}" readonly>
-                           </div>
-                        </div>
                         <div class="form-row">
                            <div class="form-group col-md-6">
                               <label for="first_name">First Name</label>
@@ -163,19 +169,18 @@
                                     <input type="text" class="form-control" name="agent" value="{{$client->agent->first_name}}" readonly> 
                               </div>
                              </div>
-
-                              <div class="form-row">
-                                 <label>Notes for the client</label>
-                                 <div class="form-group col-md-12">
-                                    <textarea type="text" class="form-control" id="note" name="notes" rows="12" cols="50" readonly/> {{$client->notes}}</textarea>
-                                 </div>
+                        <div class="form-row">
+                              <label>Notes for the client</label>
+                              <div class="form-group col-md-12">
+                                 <textarea type="text" class="form-control" id="note" name="notes" rows="12" cols="50" readonly/> {{$client->notes}}</textarea>
                               </div>
+                           </div>
                         </div>
-                     <div class="card-footer">
+                        <div class="card-footer">
                            <a style="float:right;" class="btn btn-primary" href="{{route('clients.index')}}">
                               Go back
                            </a>
-                     </div>
+                        </div>
                      </div>
                   </div>
                </section>

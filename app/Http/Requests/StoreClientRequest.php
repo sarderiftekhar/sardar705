@@ -37,7 +37,7 @@ class StoreClientRequest extends FormRequest
             'agent_id'=>'required',
             'city'=>'required',
             'zip_code'=>'required',
-            // 'client_photograph' => 'mimes:jpeg,jpg,png,gif|required|max:10000'
+            // 'photograph' => 'mimes:jpeg,jpg,png,gif|required|max:10000'
         ];
     }
 }

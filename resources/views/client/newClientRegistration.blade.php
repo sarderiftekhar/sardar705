@@ -240,9 +240,9 @@
                                     @endif
                               </div>
                               <div class="form-group col-md-6">
-                                 <label for="client_photograph">Client Photograph</label><br>
+                                 <label for="photograph">Client Photograph</label><br>
                                  <div class="input-group" style="border:1px solid rgb(230, 232, 235);padding:0.5em;">
-                                    <input type="file" name="client_photograph" id="photograph">
+                                    <input type="file" name="photograph" id="photograph">
                                  </div>
                               </div>
                         </div>

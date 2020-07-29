@@ -13,7 +13,7 @@
                      <div class="card-body">
                         <div class="form-row">
                            <div class="form-group col-md-12 text-center" style="margin:auto;">
-                              <img src= "{{ Storage::disk('public')->url($client->client_photograph) }}" alt="Photograph not present" width="250px" height="250px" style="border:1px solid cornflowerblue;">
+                              <img src= "{{ Storage::disk('public')->url($client->photograph) }}" alt="Photograph not present" width="250px" height="250px" style="border:1px solid cornflowerblue;">
                            </div>
                         </div>
                         <div class="form-row">
@@ -230,9 +230,9 @@
                                     @endif
                               </div>
                               <div class="form-group col-md-6">
-                                 <label for="client_photograph">Client Photograph</label><br>
+                                 <label for="photograph">Client Photograph</label><br>
                                     <div class="input-group" style="border:1px solid rgb(230, 232, 235);padding:0.5em;">
-                                       <input type="file" name="client_photograph" id="photograph" value="{{ Storage::disk('public')->url($client->client_photograph) }}">
+                                       <input type="file" name="photograph" id="photograph" value="{{ Storage::disk('public')->url($client->photograph) }}">
                                     </div>
                               </div>
                         </div>
@@ -294,6 +294,42 @@
                                     </div>
                                  </div>
                               </div>
+
+                              <div class="form-row">
+                                 <label for="city"><b>Client Rating</b></label>
+                                    <div class="form-group col-md-12">
+                                       <div class="pretty p-default p-curve">
+                                          <input type="radio" name="client_rating" value="A+" {{ $client->client_rating == 'A+' ? 'checked' : ''}} required/>
+                                          <div class="state p-primary-o">
+                                             <label>A+</label>
+                                          </div>
+                                       </div>
+                                       <div class="pretty p-default p-curve">
+                                          <input type="radio" name="client_rating" value="A" {{ $client->client_rating == 'A' ? 'checked' : ''}} required/>
+                                          <div class="state p-success-o">
+                                             <label>A</label>
+                                          </div>
+                                       </div>
+                                       <div class="pretty p-default p-curve">
+                                          <input type="radio" name="client_rating" value="B" {{ $client->client_rating == 'B' ? 'checked' : ''}} required/>
+                                          <div class="state p-info-o">
+                                             <label>B</label>
+                                          </div>
+                                       </div>
+                                       <div class="pretty p-default p-curve">
+                                          <input type="radio" name="client_rating" value="C" {{ $client->client_rating == 'C' ? 'checked' : ''}} required/>
+                                          <div class="state p-warning-o">
+                                             <label>C</label>
+                                          </div>
+                                       </div>
+                                       <div class="pretty p-default p-curve">
+                                          <input type="radio" name="client_rating" value="D" {{ $client->client_rating == 'D' ? 'checked' : ''}} required/>
+                                          <div class="state p-danger-o">
+                                             <label>D</label>
+                                          </div>
+                                       </div>
+                                    </div>
+                              </div>
                               <div class="form-row">
                                  <label>Notes for the client</label>
                                  <div class="form-group col-md-12">
@@ -301,6 +337,7 @@
                                  </div>
                               </div>
                         </div>
+
                      <div class="card-footer">
                         <button class="btn btn-primary" type="submit" style="float:right;">Confirm</button>
                         <button class="btn btn-danger" style="float:left;">Cancel</button>

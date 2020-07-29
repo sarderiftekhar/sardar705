@@ -31,7 +31,7 @@ class ClientSeeder extends Seeder
             'client_type'=>'Seller',
             'work_phone_number'=>'00882513467',
             'extension'=>'202',
-            'client_photograph'=>null,
+            'photograph'=>null,
             'agent_id'=>1,
             'client_rating'=>'A',
             'notes'=>'Some note here',

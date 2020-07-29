@@ -19,9 +19,12 @@ class CreateAgentsTable extends Migration
             $table->string('first_name')->nullable();
             $table->string('middle_name')->nullable();
             $table->string('last_name')->nullable();
+            $table->string('designation')->nullable();
             $table->string('email')->nullable();
             $table->string('phone')->nullable();
             $table->string('mobile')->nullable();
+            $table->string('area')->nullable();
+            $table->string('photograph')->nullable();
             $table->integer('company_id')->constrained('companies');
             $table->string('type')->nullable();
             $table->mediumText('notes');

@@ -5,11 +5,12 @@
             <form class="form" method="POST" action="{{route('clients.store')}}" enctype="multipart/form-data">
                @csrf
                <section class="section">
-                  <div class="row" style="margin:auto;">
-                     <div class="card card-primary" style="margin:auto;">
-                        <div class="card-header">
-                        <h4 style="margin:auto;">New Agent registration</h4>
-                        </div>
+                  <div class="row" >
+                     <div class="col-md-6" style="margin:auto;">
+                        <div class="card card-primary" style="margin:auto;">
+                           <div class="card-header">
+                           <h4 style="margin:auto;">New Agent registration</h4>
+                           </div>
                         <div class="card-body">
                         <div class="form-row">
                               <div class="form-group col-md-6">
@@ -71,7 +72,7 @@
                               </div>
                         </div>
                         <div class="form-row">
-                              <div class="form-group col-md-12">
+                              <div class="form-group col-md-6">
                                     <label for="email">Email</label><br>
                                     <div class="input-group">
                                        <div class="input-group-prepend">
@@ -85,7 +86,47 @@
                                        <p class="help text-danger">{{$errors->first('email')}}</p>
                                     @endif
                               </div>
+                              <div class="form-group col-md-6">
+                                 <label for="photograph">Agent Photograph</label><br>
+                                 <div class="input-group" style="border:1px solid rgb(230, 232, 235);padding:0.5em;">
+                                    <input type="file" name="photograph" id="photograph">
+                                 </div>
+                              </div>
                         </div>
+                        <div class="form-row">
+                           <div class="form-group col-md-6">
+                              <label for="designation">Designation</label>
+                              <select id="designation" class="form-control" name="designation" required>
+                                 <option selected>Choose...</option>
+                                 <option value="Seller" {{ old('designation') == "Sales Person" ? 'selected' : '' }}>Sales Person</option>
+                                 <option value="Buyer" {{ old('designation') == "Broker" ? 'selected' : '' }}>Broker</option>
+                                 <option value="Both" {{ old('designation') == "Broker of record" ? 'selected' : '' }}>Broker of record</option>
+                              </select>
+                           </div>
+                           <div class="form-group col-md-6">
+                              <label for="city">Area Covers*</label>
+                              <select id="area" class="form-control" name="area" required>
+                                 <option value="" selected>Choose...</option>
+                                 <option value="Ottawa" {{ old('city') == "Ottawa" ? 'selected' : '' }}>Ottawa</option>
+                                 <option value="Edmonton" {{ old('city') == "Edmonton" ? 'selected' : '' }}>Edmonton</option>
+                                 <option value="Victoria" {{ old('city') == "Victoria" ? 'selected' : '' }}>Victoria</option>
+                                 <option value="Winnipeg" {{ old('city') == "Winnipeg" ? 'selected' : '' }}>Winnipeg</option>
+                                 <option value="Fredericton" {{ old('city') == "Fredericton" ? 'selected' : '' }}>Fredericton</option>
+                                 <option value="St. John's" {{ old('city') == "St. John's" ? 'selected' : '' }}>St. John's</option>
+                                 <option value="Halifax" {{ old('city') == "Halifax" ? 'selected' : '' }}>Halifax</option>
+                                 <option value="Toronto" {{ old('city') == "Toronto" ? 'selected' : '' }}>Toronto</option>
+                                 <option value="Charlottetown" {{ old('city') == "Charlottetown" ? 'selected' : '' }}>Charlottetown</option>
+                                 <option value="Quebec City" {{ old('city') == "Quebec City" ? 'selected' : '' }}>Quebec City</option>
+                                 <option value="Regina" {{ old('city') == "Regina" ? 'selected' : '' }}>Regina</option>
+                                 <option value="Yellowknife" {{ old('city') == "Yellowknife" ? 'selected' : '' }}>Yellowknife</option>
+                                 <option value="Iqaluit" {{ old('city') == "Iqaluit" ? 'selected' : '' }}>Iqaluit</option>
+                                 <option value="Whitehorse" {{ old('city') == "Whitehorse" ? 'selected' : '' }}>Whitehorse</option>
+                              </select>
+                              @if($errors->has('city'))
+                                       <p class="help text-danger">{{$errors->first('city')}}</p>
+                              @endif
+                           </div>
+               </div>
                         <div class="form-row">
                                     <div class="form-group col-md-6">
                                        <label for="client_type">Agent Type</label>
@@ -138,6 +179,7 @@
                            <button class="btn btn-primary" type="submit" style="float:right;">Submit</button>
                            </div>
                         </div>
+                     </div>
                   </div>
                </section>
             </form>

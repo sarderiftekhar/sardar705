@@ -17,8 +17,11 @@ class AgentSeeder extends Seeder
             'last_name' => 'Yusuf',
             'email'=>'sardar705@gmail.com',
             'mobile'=>'0124d56799',
+            'area'=>'Toronto',
             'company_id'=>'1',
             'type'=>'Both',
+            'designation'=>'Sales Person',
+            'photograph'=>null,
             'notes'=>'Demo Agent',
             'created_at'=> now()
         ]);
