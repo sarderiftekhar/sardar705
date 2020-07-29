@@ -13,7 +13,7 @@
                      <div class="card-body">
                         <div class="form-row">
                            <div class="form-group col-md-12 text-center" style="margin:auto;">
-                              <img src= "{{asset($client->client_photograph)}}" width="250px" height="250px" style="border:1px solid cornflowerblue;">
+                              <img src= "{{ Storage::disk('public')->url($client->client_photograph) }}" alt="Photograph not present" width="250px" height="250px" style="border:1px solid cornflowerblue;">
                            </div>
                         </div>
                         <div class="form-row">
@@ -172,7 +172,7 @@
                                                 <i class="fas fa-phone"></i>
                                              </div>
                                           </div>
-                                          <input type="number" class="form-control phone-number" name="phone_number" value="{{$client->phone_number}}">
+                                          <input type="text" class="form-control phone-number" name="phone_number" value="{{$client->phone_number}}">
                                        </div>
                                  </div>
                                  <div class="form-group col-md-6">
@@ -183,13 +183,37 @@
                                           <i class="fas fa-phone"></i>
                                        </div>
                                        </div>
-                                       <input type="number" class="form-control phone-number" name="mobile_number" value="{{$client->mobile_number}}"> 
+                                       <input type="text" class="form-control phone-number" name="mobile_number" value="{{$client->mobile_number}}"> 
                                     </div>
                                     @if($errors->has('mobile_number'))
                                        <p class="help text-danger">{{$errors->first('mobile_number')}}</p>
                                     @endif
                               </div>
                         </div>
+                        <div class="form-row">
+                           <div class="form-group col-md-6">
+                                    <label for="work_phone_number">Work Telephone</label><br>
+                                    <div class="input-group">
+                                       <div class="input-group-prepend">
+                                          <div class="input-group-text">
+                                             <i class="fas fa-phone"></i>
+                                          </div>
+                                       </div>
+                                       <input type="text" class="form-control phone-number" name="work_phone_number" value="{{$client->work_phone_number}}">
+                                    </div>
+                              </div>
+                              <div class="form-group col-md-6">
+                                 <label for="Extension">Extension</label><br>
+                                 <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                       <i class="fas fa-phone"></i>
+                                    </div>
+                                    </div>
+                                    <input type="text" class="form-control extension" name="extension" value="{{$client->extension}}">
+                                 </div>
+                           </div>
+                     </div>
                         <div class="form-row">
                               <div class="form-group col-md-6">
                                     <label for="email">Email</label><br>
@@ -208,7 +232,7 @@
                               <div class="form-group col-md-6">
                                  <label for="client_photograph">Client Photograph</label><br>
                                     <div class="input-group" style="border:1px solid rgb(230, 232, 235);padding:0.5em;">
-                                       <input type="file" name="client_photograph" id="photograph" value="{{asset($client->client_photograph)}}">
+                                       <input type="file" name="client_photograph" id="photograph" value="{{ Storage::disk('public')->url($client->client_photograph) }}">
                                     </div>
                               </div>
                         </div>
@@ -239,7 +263,7 @@
                                  <label for="city">Source of origin</label>
                                     <div class="form-group col-md-12">
                                        <div class="pretty p-default p-curve">
-                                          <input type="radio" name="source_of_origin" value="Agent Reference" {{ $client->source_of_origin == 'Agent Reference' ? 'checked' : ''}}/>
+                                          <input type="radio" name="source_of_origin" value="Agent Reference" {{ $client->source_of_origin == 'Agent Reference' ? 'checked' : ''}} required/>
                                           <div class="state p-primary-o">
                                              <label>Agent Reference</label>
                                           </div>

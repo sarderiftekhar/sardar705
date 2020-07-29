@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Client;
 use App\Agent;
 use Session;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\StoreClientRequest;
@@ -44,12 +45,20 @@ class ClientController extends Controller
     {
         $client = Client::create($request->all());
         
-        if($request->hasFile('client_photograph')){
-            $path = Storage::disk('public')->put('client/images/',$request->file('client_photograph'));
-            $client->client_photograph = $path;
-            $client->save();
+        if($request->hasFile('client_photograph'))
+        {
+            $validator = Validator::make($request->all(), [
+                  'client_photograph' => 'required | mimes:jpeg,jpg,png | max:5000',
+            ]);
+            if ($validator->fails()) 
+            {
+                 return redirect()->back()->with('image_error');
+            }
+           $path = Storage::disk('public')->put('client/images/',$request->file('client_photograph'));
+           $client->client_photograph = $path;
+           $client->save();
         }
-        $request->session()->flash('message', 'Client saved successfully.');
+        $request->session()->flash('message');
         return back();
     }
 

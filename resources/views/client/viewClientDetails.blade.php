@@ -97,7 +97,7 @@
                                                 <i class="fas fa-phone"></i>
                                              </div>
                                           </div>
-                                          <input type="number" class="form-control phone-number" name="phone_number" value="{{$client->phone_number}}" readonly>
+                                          <input type="text" class="form-control phone-number" name="phone_number" value="{{$client->phone_number}}" readonly>
                                        </div>
                                  </div>
                                  <div class="form-group col-md-6">
@@ -108,10 +108,34 @@
                                           <i class="fas fa-phone"></i>
                                        </div>
                                        </div>
-                                       <input type="number" class="form-control mobile_number" name="mobile_number" value="{{$client->mobile_number}}" readonly>
+                                       <input type="text" class="form-control phone-number="mobile_number" value="{{$client->mobile_number}}" readonly>
                                     </div>
                               </div>
                         </div>
+                        <div class="form-row">
+                           <div class="form-group col-md-6">
+                                    <label for="work_phone_number">Work Telephone</label><br>
+                                    <div class="input-group">
+                                       <div class="input-group-prepend">
+                                          <div class="input-group-text">
+                                             <i class="fas fa-phone"></i>
+                                          </div>
+                                       </div>
+                                       <input type="text" class="form-control phone-number" name="work_phone_number" value="{{$client->work_phone_number}}" readonly>
+                                    </div>
+                              </div>
+                              <div class="form-group col-md-6">
+                                 <label for="Extension">Extension</label><br>
+                                 <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                       <i class="fas fa-phone"></i>
+                                    </div>
+                                    </div>
+                                    <input type="text" class="form-control extension" name="extension" value="{{$client->extension}}" readonly>
+                                 </div>
+                           </div>
+                     </div>
                         <div class="form-row">
                               <div class="form-group col-md-6">
                                     <label for="email">Email</label><br>
@@ -143,7 +167,7 @@
                               <div class="form-row">
                                  <label>Notes for the client</label>
                                  <div class="form-group col-md-12">
-                                    <textarea type="text" class="form-control" id="note" name="notes" />{{old('notes')}}</textarea>
+                                    <textarea type="text" class="form-control" id="note" name="notes" rows="12" cols="50" readonly/> {{$client->notes}}</textarea>
                                  </div>
                               </div>
                         </div>

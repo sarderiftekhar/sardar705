@@ -13,9 +13,10 @@
                      <div class="card-body">
                         <div class="form-row">
                               <div class="form-group col-md-6">
-                                    <div class="section-title">Title</div>
+                                    <label for="">Title*</label>
+                                    <br>
                                     <div class="pretty p-default p-round">
-                                       <input type="radio" name="title" value="Mr">
+                                       <input type="radio" name="title" value="Mr" required>
                                        <div class="state">
                                           <label>Mr</label>
                                        </div>
@@ -34,9 +35,10 @@
                                     </div>
                               </div>
                               <div class="form-group col-md-6">
-                                    <div class="section-title">Marital status</div>
+                                    <label for="">Marital Status*</label>
+                                    <br>
                                     <div class="pretty p-icon p-round p-plain p-smooth">
-                                       <input type="radio" name="marital_status" value="Single">
+                                       <input type="radio" name="marital_status" value="Single" required>
                                        <div class="state p-primary-o">
                                           <i class="icon material-icons">accessibility</i>
                                           <label>Single</label>
@@ -60,7 +62,7 @@
                         </div>
                         <div class="form-row">
                            <div class="form-group col-md-6">
-                              <label for="first_name">First Name</label>
+                              <label for="first_name">First Name*</label>
                               <input type="text" class="form-control" id="first_name" placeholder="First Name" name="first_name" value="{{old('first_name')}}" required>
                               @if($errors->has('first_name'))
                                  <p class="help text-danger">{{$errors->first('first_name')}}</p>
@@ -73,14 +75,14 @@
                         </div>
                         <div class="form-row">
                            <div class="form-group col-md-6">
-                              <label for="last_name">Last Name</label>
+                              <label for="last_name">Last Name*</label>
                               <input type="text" class="form-control" id="last_name" placeholder="Last name" name="last_name" value="{{old('last_name')}}" required>
                               @if($errors->has('last_name'))
                                     <p class="help text-danger">{{$errors->first('last_name')}}</p>
                               @endif
                            </div>
                            <div class="form-group col-md-6">
-                              <label for="address_line_1">Address Line1</label>
+                              <label for="address_line_1">Address Line1*</label>
                               <input type="text" class="form-control" id="address_line_1" placeholder="1234 Main St" name="address_line_1" value="{{old('address_line_1')}}" required>
                               @if($errors->has('address_line_1'))
                               <p class="help text-danger">{{$errors->first('address_line_1')}}</p>
@@ -100,9 +102,9 @@
                         </div>
                         <div class="form-row">
                            <div class="form-group col-md-6">
-                              <label for="inputState">Province</label>
-                              <select id="inputProvince" class="form-control" name="province">
-                              <option selected>Choose...</option>
+                              <label for="inputState">Province*</label>
+                              <select id="inputProvince" class="form-control" name="province" required>
+                              <option value="" selected>Choose...</option>
                               <option value="Alberta" {{ old('province') == "Alberta" ? 'selected' : '' }}>Alberta</option>
                               <option value="British Columbia" {{ old('province') == "British Columbia" ? 'selected' : '' }}>British Columbia</option>
                               <option value="Manitoba" {{ old('province') == "Manitoba" ? 'selected' : '' }}>Manitoba</option>
@@ -112,11 +114,14 @@
                               <option value="Nova Scotia" {{ old('province') == "Nova Scotia" ? 'selected' : '' }}>Nova Scotia</option>
                               <option value="Nunavut" {{ old('province') == "Nunavut" ? 'selected' : '' }}>Nunavut</option>
                               </select>
+                              @if($errors->has('province'))
+                                 <p class="help text-danger">{{$errors->first('province')}}</p>
+                              @endif
                            </div>
                            <div class="form-group col-md-6">
-                              <label for="city">City</label>
+                              <label for="city">City*</label>
                               <select id="city" class="form-control" name="city" required>
-                                 <option selected>Choose...</option>
+                                 <option value="" selected>Choose...</option>
                                  <option value="Ottawa" {{ old('city') == "Ottawa" ? 'selected' : '' }}>Ottawa</option>
                                  <option value="Edmonton" {{ old('city') == "Edmonton" ? 'selected' : '' }}>Edmonton</option>
                                  <option value="Victoria" {{ old('city') == "Victoria" ? 'selected' : '' }}>Victoria</option>
@@ -132,11 +137,14 @@
                                  <option value="Iqaluit" {{ old('city') == "Iqaluit" ? 'selected' : '' }}>Iqaluit</option>
                                  <option value="Whitehorse" {{ old('city') == "Whitehorse" ? 'selected' : '' }}>Whitehorse</option>
                               </select>
+                              @if($errors->has('city'))
+                                       <p class="help text-danger">{{$errors->first('city')}}</p>
+                              @endif
                            </div>
                         </div>
                         <div class="form-row">
                            <div class="form-group col-md-6">
-                              <label for="inputZip">Zip</label>
+                              <label for="inputZip">Zip*</label>
                               <input type="text" class="form-control" id="inputZip" name="zip_code" value="{{old('zip_code')}}">
                               @if($errors->has('zip_code'))
                                     <p class="help text-danger">{{$errors->first('zip_code')}}</p>
@@ -144,7 +152,7 @@
                            </div>
                            <div class="form-group col-md-6">
                               <label for="country">Country</label>
-                              <select id="country" class="form-control" name="country">
+                              <select id="country" class="form-control" name="country" required>
                               <option value="Canada" {{ old('country') == "Canada" ? 'selected' : '' }} selected>Canada</option>
                               </select>
                            </div>
@@ -172,20 +180,50 @@
                                        </div>
                                  </div>
                                  <div class="form-group col-md-6">
-                                    <label for="phone_number">Cell Number</label><br>
+                                    <label for="phone_number">Cell Number*</label><br>
                                     <div class="input-group">
                                        <div class="input-group-prepend">
                                        <div class="input-group-text">
                                           <i class="fas fa-phone"></i>
                                        </div>
                                        </div>
-                                       <input type="number" class="form-control phone-number" name="mobile_number" value="{{old('mobile_number')}}"> 
+                                       <input type="number" class="form-control phone-number" name="mobile_number" value="{{old('mobile_number')}}" required> 
                                     </div>
                                     @if($errors->has('mobile_number'))
                                        <p class="help text-danger">{{$errors->first('mobile_number')}}</p>
                                     @endif
                               </div>
                         </div>
+                        <div class="form-row">
+                           <div class="form-group col-md-6">
+                                    <label for="work_phone_number">Work Telephone</label><br>
+                                    <div class="input-group">
+                                       <div class="input-group-prepend">
+                                          <div class="input-group-text">
+                                             <i class="fas fa-phone"></i>
+                                          </div>
+                                       </div>
+                                       <input type="number" class="form-control work_phone_number" name="work_phone_number" value="{{old('work_phone_number')}}">
+                                    </div>
+                                    @if($errors->has('work_phone_number'))
+                                       <p class="help text-danger">{{$errors->first('work_phone_number')}}</p>
+                                    @endif
+                              </div>
+                              <div class="form-group col-md-6">
+                                 <label for="extension">Extension</label><br>
+                                 <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                       <i class="fas fa-phone"></i>
+                                    </div>
+                                    </div>
+                                    <input type="number" class="form-control extension" name="extension" value="{{old('extension')}}"> 
+                                 </div>
+                                 @if($errors->has('extension'))
+                                    <p class="help text-danger">{{$errors->first('extension')}}</p>
+                                 @endif
+                           </div>
+                     </div>
                         <div class="form-row">
                               <div class="form-group col-md-6">
                                     <label for="email">Email</label><br>
@@ -212,7 +250,7 @@
                               <div class="form-group col-md-6">
                                  <label for="client_type">Client Type</label>
                                  <select id="city" class="form-control" name="client_type" required>
-                                    <option selected>Choose...</option>
+                                    <option value="" selected>Choose...</option>
                                     <option value="Seller" {{ old('client_type') == "Seller" ? 'selected' : '' }}>Seller</option>
                                     <option value="Buyer" {{ old('client_type') == "Buyer" ? 'selected' : '' }}>Buyer</option>
                                     <option value="Lease Land Lord" {{ old('client_type') == "Lease-Land-Lord" ? 'selected' : '' }}>Lease Land Lord</option>
@@ -222,11 +260,14 @@
                                     <option value="Commercial Lease Land Lord " {{ old('client_type') == "Commercial Lease Land Lord" ? 'selected' : '' }}>Commercial Lease Land Lord</option>
                                     <option value="Commercial Lease Tenant" {{ old('client_type') == "Commercial Lease Tenant" ? 'selected' : '' }}>Commercial Lease Tenant</option>
                                  </select>
+                                 @if($errors->has('client_type'))
+                                     <p class="help text-danger">{{$errors->first('client_type')}}</p>
+                                 @endif
                               </div>
                               <div class="form-group col-md-6">
                                     <label for="city">Agent reference</label>
                                     <select id="city" class="form-control" name="agent_id" required>
-                                       <option selected>Choose...</option>
+                                       <option value="" selected>Choose...</option>
                                        @foreach ($agents as $agent)
                                           <option value="{{$agent->id}}">{{$agent->first_name}} {{$agent->last_name}}</option>
                                        @endforeach
@@ -234,41 +275,75 @@
                                  </div>
                         </div>
                         <div class="form-row">
-                           <label for="city">Source of origin</label>
+                           <label for="city"><b>Source of origin</b></label>
                               <div class="form-group col-md-12">
                                  <div class="pretty p-default p-curve">
-                                    <input type="radio" name="source_of_origin" value="Agent Reference"/>
+                                    <input type="radio" name="source_of_origin" value="Agent Reference" required/>
                                     <div class="state p-primary-o">
                                        <label>Agent Reference</label>
                                     </div>
                                  </div>
                                  <div class="pretty p-default p-curve">
-                                    <input type="radio" name="source_of_origin" />
+                                    <input type="radio" name="source_of_origin" value="Facebook"/>
                                     <div class="state p-success-o">
                                        <label>Facebook</label>
                                     </div>
                                  </div>
                                  <div class="pretty p-default p-curve">
-                                    <input type="radio" name="source_of_origin" />
+                                    <input type="radio" name="source_of_origin" value="Word of Mouth"/>
                                     <div class="state p-info-o">
                                        <label>Word of Mouth</label>
                                     </div>
                                  </div>
                                  <div class="pretty p-default p-curve">
-                                    <input type="radio" name="source_of_origin" />
+                                    <input type="radio" name="source_of_origin" value="Website"/>
                                     <div class="state p-warning-o">
                                        <label>Website</label>
                                     </div>
                                  </div>
                                  <div class="pretty p-default p-curve">
-                                    <input type="radio" name="source_of_origin" />
+                                    <input type="radio" name="source_of_origin" value="Search engine"/>
                                     <div class="state p-danger-o">
                                        <label>Search engine</label>
                                     </div>
                                  </div>
                               </div>
                         </div>
-
+                        <div class="form-row">
+                           <label for="city"><b>Client Rating</b></label>
+                              <div class="form-group col-md-12">
+                                 <div class="pretty p-default p-curve">
+                                    <input type="radio" name="client_rating" value="A+" required/>
+                                    <div class="state p-primary-o">
+                                       <label>A+</label>
+                                    </div>
+                                 </div>
+                                 <div class="pretty p-default p-curve">
+                                    <input type="radio" name="client_rating" value="A"/>
+                                    <div class="state p-success-o">
+                                       <label>A</label>
+                                    </div>
+                                 </div>
+                                 <div class="pretty p-default p-curve">
+                                    <input type="radio" name="client_rating" value="B"/>
+                                    <div class="state p-info-o">
+                                       <label>B</label>
+                                    </div>
+                                 </div>
+                                 <div class="pretty p-default p-curve">
+                                    <input type="radio" name="client_rating" value="C"/>
+                                    <div class="state p-warning-o">
+                                       <label>C</label>
+                                    </div>
+                                 </div>
+                                 <div class="pretty p-default p-curve">
+                                    <input type="radio" name="client_rating" value="D"/>
+                                    <div class="state p-danger-o">
+                                       <label>D</label>
+                                    </div>
+                                 </div>
+                              </div>
+                        </div>
                               <div class="form-row">
                                  <label>Notes for the client</label>
                                  <div class="form-group col-md-12">
@@ -288,6 +363,11 @@
    @if(Session::has('message'))
          <script>
                swal("Client saved successfully!");
+         </script>
+   @endif
+   @if(Session::has('image_error'))
+         <script>
+               swal("The image file should be in proper image format!");
          </script>
    @endif
 @stop

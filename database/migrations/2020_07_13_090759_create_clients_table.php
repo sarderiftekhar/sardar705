@@ -33,8 +33,11 @@ class CreateClientsTable extends Migration
             $table->date('date_of_birth')->nullable();
             $table->date('marriage_day')->nullable();
             $table->string('client_type')->nullable();
+            $table->string('work_phone_number')->nullable();
+            $table->string('extension')->nullable();
             $table->string('client_photograph')->nullable();
             $table->string('source_of_origin')->nullable();
+            $table->string('client_rating')->nullable();
             $table->foreignId('agent_id')->constrained('agents');
             $table->mediumText('notes')->nullable();
             $table->tinyInteger('status')->default('1');
