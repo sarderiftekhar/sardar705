@@ -14,6 +14,8 @@
   <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
   <link rel="stylesheet" href="{{asset('assets/css/components.css')}}">
   <link rel="stylesheet" href="{{asset('assets/bundles/pretty-checkbox/pretty-checkbox.min.css')}}">
+  <link rel="stylesheet" href="{{asset('assets/bundles/select2/dist/css/select2.min.css')}}">
+  <link rel="stylesheet" href="{{asset('assets/bundles/jquery-selectric/selectric.css')}}">
   
   {{-- Datatables --}}
   <link rel="stylesheet" href="{{asset('assets/bundles/datatables/datatables.min.css')}}">

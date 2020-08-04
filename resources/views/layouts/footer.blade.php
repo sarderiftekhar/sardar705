@@ -17,6 +17,8 @@
  <script src="{{asset('assets/bundles/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js')}}"></script>
  <script src="{{asset('assets/bundles/jquery-ui/jquery-ui.min.js')}}"></script>
  <script src="{{asset('assets/bundles/izitoast/js/iziToast.min.js')}}"></script>
+ <script src="{{asset('assets/bundles/select2/dist/js/select2.full.min.js')}}"></script>
+ <script src="{{asset('assets/bundles/jquery-selectric/jquery.selectric.min.js')}}"></script>
   
 <!-- Page Specific JS File -->
  <script src="{{asset('assets/js/page/index.js')}}"></script>
