@@ -14,13 +14,12 @@
                                  <table class="table table-striped display" id="company_list"  style="width:100%">
                                     <thead>
                                        <tr>
-                                             <th>ID</th>
                                              <th>Company Name</th>
                                              <th>Address Line1</th>
                                              <th>Address Line 2</th>
                                              <th>Address Line 3</th>
                                              <th>City</th>
-                                             <th>State</th>
+                                             <th>Province</th>
                                              <th>Zip</th>
                                              <th>Phone</th>
                                              <th>Fax</th>
@@ -32,21 +31,20 @@
                                     <tbody>
                                        @foreach ($companies as $company)
                                              <tr>
-                                                <td>{{$company->id}}</td>
                                                 <td>{{$company->name}}</td>
                                                 <td>{{$company->address_line_1}}</td>
                                                 <td>{{$company->address_line_2}}</td>
                                                 <td>{{$company->address_line_3}}</td>
                                                 <td>{{$company->city}}</td>
-                                                <td>{{$company->state}}</td>
-                                                <td>{{$company->zip_code}}</td>
+                                                <td>{{$company->province}}</td>
+                                                <td>{{$company->zip}}</td>
                                                 <td>{{$company->phone}}</td>
                                                 <td>{{$company->fax}}</td>
                                                 <td>{{$company->email}}</td>
                                                 <td>{{$company->website}}</td>
                                                 <td>
-                                                   <a href="" class="btn btn-primary">Details</a>
-                                                   <a href="" class="btn btn-info">Modify</a>
+                                                   <a href="{{route('companies.show',$company)}}" class="btn btn-primary">Details</a>
+                                                   <a href="{{route('companies.edit',$company)}}" class="btn btn-info">Modify</a>
                                                 </td>
                                              </tr>
                                        @endforeach

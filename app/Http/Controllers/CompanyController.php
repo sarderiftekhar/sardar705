@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Company;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreCompanyRequest;
+
 
 class CompanyController extends Controller
 {
@@ -34,11 +36,10 @@ class CompanyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreCompanyRequest $request)
     {
-        request()->validate([
-                'notes'=> 'required',
-            ]);
+        $company = Company::create($request->all());
+        $request->session()->flash('message');
         return redirect()->back();
     }
 
@@ -50,7 +51,7 @@ class CompanyController extends Controller
      */
     public function show(Company $company)
     {
-        //
+        return view('company.viewCompanyDetails',compact('company'));
     }
 
     /**
@@ -61,7 +62,7 @@ class CompanyController extends Controller
      */
     public function edit(Company $company)
     {
-        //
+        return view('company.editCompanyDetails',compact('company'));
     }
 
     /**
@@ -73,7 +74,9 @@ class CompanyController extends Controller
      */
     public function update(Request $request, Company $company)
     {
-        //
+        $company->update($request->all());
+        $request->session()->flash('message');
+        return view('company.editCompanyDetails',compact('company'));
     }
 
     /**
