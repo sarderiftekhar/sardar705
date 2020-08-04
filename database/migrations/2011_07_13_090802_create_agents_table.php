@@ -26,7 +26,6 @@ class CreateAgentsTable extends Migration
             $table->string('area')->nullable();
             $table->string('photograph')->nullable();
             $table->integer('company_id')->constrained('companies');
-            $table->string('type')->nullable();
             $table->mediumText('notes');
             $table->timestamps();
         });

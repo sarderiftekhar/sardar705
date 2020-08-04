@@ -23,7 +23,7 @@ class ClientSeeder extends Seeder
             'zip_code' => '1000',
             'province' => 'Quebec',
             'city' => 'Berry',
-            'email'=>'sardar705@gmail.com',
+            'email'=>'sardar2030@gmail.com',
             'phone_number'=>'0124156799',
             'mobile_number'=>'0078256799',
             'date_of_birth'=>'1990-06-06',

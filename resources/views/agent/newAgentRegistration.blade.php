@@ -130,12 +130,12 @@
                      </div>
                         <div class="form-row">
                            <div class="form-group col-md-6">
-                              <label for="type">Agent Type*</label>
-                              <select id="type" class="form-control" name="type" required>
-                                 <option selected>Choose...</option>
-                                 <option value="Seller" {{ old('type') == "Seller" ? 'selected' : '' }}>Seller</option>
-                                 <option value="Buyer" {{ old('type') == "Buyer" ? 'selected' : '' }}>Buyer</option>
-                                 <option value="Both" {{ old('type') == "Both" ? 'selected' : '' }}>Both</option>
+                              <label for="type">Designation*</label>
+                              <select id="type" class="form-control" name="designation" required>
+                                 <option selected value="">Choose...</option>
+                                 <option value="Sales person" {{ old('type') == "Sales person" ? 'selected' : '' }}>Sales person</option>
+                                 <option value="Broker" {{ old('type') == "Broker" ? 'selected' : '' }}>Broker</option>
+                                 <option value="Broker of record" {{ old('type') == "Broker of record" ? 'selected' : '' }}>Broker of record</option>
                               </select>
                            </div>
                            <div class="form-group col-md-6">

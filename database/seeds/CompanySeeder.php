@@ -12,7 +12,7 @@ class CompanySeeder extends Seeder
     public function run()
     {
         DB::table('companies')->insert([
-            'name' => 'Sarder705',
+            'name' => 'Sarder',
             'address_line_1' => 'address_line',
             'address_line_2' => 'address_line_2',
             'address_line_3' => 'address_line_3',
@@ -21,7 +21,7 @@ class CompanySeeder extends Seeder
             'zip'=>'1000',
             'phone'=>'0123456789',
             'fax'=>'0123456789',
-            'email'=>'sardar705@gmail.com',
+            'email'=>'sardar-agency@gmail.com',
             'website'=>'www.sardar705.xyz',
             'notes'=>'Demo company',
             'created_at'=>now(),
