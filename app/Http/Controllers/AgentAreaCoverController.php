@@ -2,17 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Agent;
-use App\Client;
-use Session;
-use App\Company;
 use App\AgentAreaCover;
-use App\Services\AgentService;
 use Illuminate\Http\Request;
-use App\Http\Requests\StoreAgentRequest;
 
-
-class AgentController extends Controller
+class AgentAreaCoverController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,8 +14,7 @@ class AgentController extends Controller
      */
     public function index()
     {
-        $agents = Agent::all();
-        return view('agent.listOfAgents',compact('agents'));
+        //
     }
 
     /**
@@ -32,8 +24,7 @@ class AgentController extends Controller
      */
     public function create()
     {
-        $companies = Company::all();
-        return view('agent.newAgentRegistration',compact('companies'));
+        //
     }
 
     /**
@@ -42,20 +33,18 @@ class AgentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreAgentRequest $request, AgentService $agentService)
+    public function store(Request $request)
     {
-        $agent = $agentService->saveNewAgent($request);
-        $request->session()->flash('message');
-        return back();
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Agent  $agent
+     * @param  \App\AgentAreaCover  $agentAreaCover
      * @return \Illuminate\Http\Response
      */
-    public function show(Agent $agent)
+    public function show(AgentAreaCover $agentAreaCover)
     {
         //
     }
@@ -63,10 +52,10 @@ class AgentController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Agent  $agent
+     * @param  \App\AgentAreaCover  $agentAreaCover
      * @return \Illuminate\Http\Response
      */
-    public function edit(Agent $agent)
+    public function edit(AgentAreaCover $agentAreaCover)
     {
         //
     }
@@ -75,10 +64,10 @@ class AgentController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Agent  $agent
+     * @param  \App\AgentAreaCover  $agentAreaCover
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Agent $agent)
+    public function update(Request $request, AgentAreaCover $agentAreaCover)
     {
         //
     }
@@ -86,10 +75,10 @@ class AgentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Agent  $agent
+     * @param  \App\AgentAreaCover  $agentAreaCover
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Agent $agent)
+    public function destroy(AgentAreaCover $agentAreaCover)
     {
         //
     }

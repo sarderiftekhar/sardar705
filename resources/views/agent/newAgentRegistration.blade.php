@@ -105,9 +105,7 @@
                            </div>
                            <div class="form-group col-md-6">
                               <label for="city">Area Covers* (Multiple selection available)</label>
-                              <select class="form-control selectric" multiple="" name="area" required>
-                              {{-- <select id="area" class="form-control" name="area" required> --}}
-                                 <option value="" selected>Choose...</option>
+                              <select class="form-control selectric" multiple="" name="area[]" required>
                                  <option value="Ottawa" {{ old('city') == "Ottawa" ? 'selected' : '' }}>Ottawa</option>
                                  <option value="Edmonton" {{ old('city') == "Edmonton" ? 'selected' : '' }}>Edmonton</option>
                                  <option value="Victoria" {{ old('city') == "Victoria" ? 'selected' : '' }}>Victoria</option>
@@ -130,12 +128,12 @@
                      </div>
                         <div class="form-row">
                            <div class="form-group col-md-6">
-                              <label for="type">Designation*</label>
-                              <select id="type" class="form-control" name="designation" required>
+                              <label for="type">Type*</label>
+                              <select id="type" class="form-control" name="type" required>
                                  <option selected value="">Choose...</option>
-                                 <option value="Sales person" {{ old('type') == "Sales person" ? 'selected' : '' }}>Sales person</option>
-                                 <option value="Broker" {{ old('type') == "Broker" ? 'selected' : '' }}>Broker</option>
-                                 <option value="Broker of record" {{ old('type') == "Broker of record" ? 'selected' : '' }}>Broker of record</option>
+                                 <option value="Seller" {{ old('type') == "Seller" ? 'selected' : '' }}>Seller</option>
+                                 <option value="Buyer" {{ old('type') == "Buyer" ? 'selected' : '' }}>Buyer</option>
+                                 <option value="Both" {{ old('type') == "Both" ? 'selected' : '' }}>Both</option>
                               </select>
                            </div>
                            <div class="form-group col-md-6">
