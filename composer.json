@@ -15,10 +15,10 @@
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.1",
-        "protoqol/prequel": "^1.22",
         "spatie/laravel-backup": "^6.11"
     },
     "require-dev": {
+        "protoqol/prequel": "^1.22",
         "barryvdh/laravel-debugbar": "^3.3",
         "facade/ignition": "^2.0",
         "fzaninotto/faker": "^1.9.1",
