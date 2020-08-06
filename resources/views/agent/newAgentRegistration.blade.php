@@ -105,9 +105,7 @@
                            </div>
                            <div class="form-group col-md-6">
                               <label for="city">Area Covers* (Multiple selection available)</label>
-                              <select class="form-control selectric" multiple="" name="area" required>
-                              {{-- <select id="area" class="form-control" name="area" required> --}}
-                                 <option value="" selected>Choose...</option>
+                              <select class="form-control selectric" multiple="" name="area[]" required>
                                  <option value="Ottawa" {{ old('city') == "Ottawa" ? 'selected' : '' }}>Ottawa</option>
                                  <option value="Edmonton" {{ old('city') == "Edmonton" ? 'selected' : '' }}>Edmonton</option>
                                  <option value="Victoria" {{ old('city') == "Victoria" ? 'selected' : '' }}>Victoria</option>

@@ -32,7 +32,6 @@ class StoreAgentRequest extends FormRequest
             'company_id'=>'required',
             'designation'=>'required',
             'area'=>'required',
-            'type'=>'required',
         ];
     }
 }

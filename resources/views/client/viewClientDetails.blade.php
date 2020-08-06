@@ -6,7 +6,7 @@
                   <div class="row" style="margin:auto;">
                      <div class="card card-primary col-md-6" style="margin:auto;">
                         <div class="card-header">
-                           <h4 style="margin:auto;margin-left:17em;">{{$client->first_name}} {{$client->last_name}}</h4>
+                           <h4 style="margin:auto;margin-left:17em;">Details of {{$client->first_name}} {{$client->last_name}}</h4>
                            <a style="float:right;" class="btn btn-primary" href="{{route('clients.index')}}">
                               Back
                            </a>

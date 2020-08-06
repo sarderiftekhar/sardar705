@@ -42,7 +42,6 @@
                      <div class="custom-control custom-checkbox">
                         {{-- <input type="checkbox" name="remember" class="custom-control-input" tabindex="3" id="remember-me"> --}}
                         <input class="custom-control-input" type="checkbox" name="remember" tabindex="3" id="remember-me" {{ old('remember') ? 'checked' : '' }}>
-
                         <label class="custom-control-label" for="remember-me">  {{ __('Remember Me') }} </label>
                      </div>
                   </div>
