@@ -6,11 +6,10 @@ use App\Agent;
 use App\Client;
 use Session;
 use App\Company;
+use App\AgentAreaCover;
+use App\Services\AgentService;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\Validator;
 use App\Http\Requests\StoreAgentRequest;
-
 
 
 class AgentController extends Controller
@@ -43,25 +42,9 @@ class AgentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreAgentRequest $request)
+    public function store(StoreAgentRequest $request, AgentService $agentService)
     {
-        return $request->all();
-
-        $agent = Agent::create($request->all());
-        
-        if($request->hasFile('photograph'))
-        {
-            $validator = Validator::make($request->all(), [
-                  'photograph' => 'required | mimes:jpeg,jpg,png | max:5000',
-            ]);
-            if ($validator->fails()) 
-            {
-                 return redirect()->back()->with('image_error');
-            }
-           $path = Storage::disk('public')->put('agent/images/',$request->file('photograph'));
-           $agent->photograph = $path;
-           $agent->save();
-        }
+        $agent = $agentService->saveNewAgent($request);
         $request->session()->flash('message');
         return back();
     }
